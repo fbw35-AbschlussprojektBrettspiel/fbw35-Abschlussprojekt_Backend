@@ -8,8 +8,8 @@ const errorMiddleware = require('./middleware/errorMiddleware');
 // Routes importieren
 const fragenRouter = require('./routes/fragen');
 
-const URI = process.env.DB ?? 'mongodb://localhost:27017/quizfragen';
-const port = process.env.PORT ?? 3050;
+const URI = process.env.DB || 'mongodb://localhost:27017/quizfragen';
+const port = process.env.PORT || 3050;
 
 mongoose.connect(URI, {
   useNewUrlParser: true,
