@@ -20,7 +20,7 @@ const db = mongoose.connection;
 
 db.on('error', error => console.log(error));
 
-db.once('open', () => console.log(`mit der Datenbank auf ${URI} verbunden`));
+db.once('open', () => console.log(`mit der Datenbank verbunden`));
 
 const app = express();
 
