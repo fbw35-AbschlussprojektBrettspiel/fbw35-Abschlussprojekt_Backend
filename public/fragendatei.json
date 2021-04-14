@@ -1,0 +1,509 @@
+[
+    {
+   "thema": "html",
+   "frage": "Was bedeutet HTML?",
+   "antworten": ["HTML steht für Hyper Text Markup Language","HTML steht für Hyperlinks and Text Markup language","HTML steht für Home Tool Markup Language"],
+   "indexRichtigeAntwort": 0 
+  },
+    {
+   "thema": "html",
+   "frage": "Wer macht die Webstandards?",
+   "antworten": ["Das World Wide Web Consortium","Microsoft","Google","Mozilla"],
+   "indexRichtigeAntwort": 0
+  },
+    {
+   "thema": "html",
+   "frage":"Das HTML-Element für die richtige Überschrift ist?",
+   "antworten": ["<heading>","<h6>","<head>","<h1>"],
+   "indexRichtigeAntwort": 3
+  },
+    {
+   "thema": "html",
+   "frage": "Mit welchem ​​HTML-Element wird eine Kopfzeile für ein Dokument oder einen Abschnitt angegeben?",
+   "antworten": ["<top>","<header>","<head>", "<section>" ],
+   "indexRichtigeAntwort": 1
+  },
+    {
+    "thema": "html",
+    "frage": "Was definiert das <aside>-Element in HTML?",
+    "antworten": ["den ASCII-Zeichensatz; So senden Sie Informationen zwischen Computern im Internet",
+    "Eine Navigationsliste, die auf der linken Seite der Seite angezeigt werden soll", 
+    "Inhalte abseits des Seiteninhalts"],
+    "indexRichtigeAntwort": 2
+  },
+    {
+    "thema":"html",
+    "frage":"Welches HTML-Tag wird verwendet, um einen Link zu erstellen?" ,
+    "antworten": ["<a>","<link>","<hpyerlink>","<li>"],
+    "indexRichtigeAntwort": 0 
+  },
+    {
+    "thema": "html",
+    "frage":"Was ist das richtige HTML-Element, zum Einfügen eines Zeilenumbruchs?" ,
+    "antworten": ["<br>", "<break>", "<lb>" ],
+    "indexRichtigeAntwort": 0
+  },
+    {
+    "thema": "html",
+    "frage":"Wie ist der richtige HTML-Code, zum Hinterlegen der Hintergrundfarbe?",
+    "antworten": ["<background>yellow</background>","<body bg ='yellow'>", "<body style ='background-color:yellow;'>" ],
+    "indexRichtigeAntwort": 2
+  },
+    {
+    "thema":"html",
+    "frage":"Wählen sie das richtige HTML-Element, um wichtigen Text zu definieren" ,
+    "antworten": ["<important>", "<br>", "<i>", "<strong>"],
+    "indexRichtigeAntwort": 3
+  },
+    {
+    "thema":"html",
+    "frage": "Wähle das richtige HTML-Element aus, um hervorgehobenen Text zu definieren" ,
+    "antworten": ["<em>", "<italic>", "<i>"],
+    "indexRichtigeAntwort": 0
+  },
+    {
+    "thema": "html",
+    "frage":"Was ist der richtige HTML-Code zum Erstellen eines Hyperlinks?",
+    "antworten": ["<a>http://www.meinewebseite.com</a>", "<a name = 'http://www.meinewebseite.com'>Meine Webseite</a>", 
+      "<a url ='http://www.meinewebseite.com'>Meine Webseite</a>", "<a href ='http://www.meinewebseite.com'>Meine Webseite</a>" ],
+    "indexRichtigeAntwort": 3
+  },
+    {
+    "thema": "html",
+    "frage":"Wie können sie einen Link in einem neuen Tab/Browser-Fenster öffnen?" ,
+    "antworten": ["<a href='url' target ='_blank'>", "<a href='url' new>", "<a href='url' target='new'>" ],
+    "indexRichtigeAntwort": 0
+  },
+    {
+    "thema": "html",
+    "frage":"Welche deser Elemente sind alle <table> - Elemente?" ,
+    "antworten": ["<table> <tr> <td>", "<table> <tr> <tt>", "<thead> <body> <tr>", "<table> <head> <tfoot>" ],
+    "indexRichtigeAntwort": 0
+  },
+    {
+    "thema": "html",
+    "frage": "Wie können sie eine nummerierte Liste erstellen?",
+    "antworten": ["<dl>", "<ul>", "<list>", "<ol>"],
+    "indexRichtigeAntwort": 3
+  },
+    {
+    "thema": "html",
+    "frage": "Wie können sie eine Liste mit Aufzählungszeichen erstellen?",
+    "antworten": ["<ol>", "<dl>", "<ul>", "<list>"],
+    "indexRichtigeAntwort": 2
+  },
+    {
+    "thema": "html",
+    "frage": "Was ist der richtige HTML-Code zum Erstellen eines Kontrollkästchens?",
+    "antworten": ["<input type='checkbox'>", "<input type= 'check'>", "<checkbox>", "<check>" ],
+    "indexRichtigeAntwort": 2
+  },
+    {
+    "thema": "html",
+    "frage":"Was ist der richtige HTML-Code zum Erstellen eines Texteingabefelds?",
+    "antworten": ["<input'type=textfield'>", "<textinput type ='text'>", "<textfield>", "<input type='text' >" ],
+    "indexRichtigeAntwort": 3
+  },
+    {
+    "thema": "html" ,
+    "frage":"Was ist der richtige HTML_Code zum Erstellen einer Dropdown-Liste?",
+    "antworten": ["<input type='dropdown'>", "<list>", "<input type='list'>", "<select>" ],
+    "indexRichtigeAntwort": 3
+  },
+    {
+    "thema": "html" ,
+    "frage": "Was ist der richtige HTML-Code zum Erstellen eines Texbereichs?",
+    "antworten": ["<textarea>", "<input type= 'textarea'>", "<input type='textbox'>" ],
+    "indexRichtigeAntwort": 0
+  },
+    {
+    "thema": "html",
+    "frage": "Was ist der richtige HTML-Code zum Einfügen eines Bildes?",
+    "antworten": ["<image src='image.gif' alt='MyImage'>", "<img src='image.gif' alt='MyImage'>", "<img alt='MyImage'>image.gif</img>" ],
+    "indexRichtigeAntwort": 1
+  },
+    {
+    "thema": "html" ,
+    "frage": "Was ist der richtige HTML-Code zum Einfügen eines Hintergrundbilds?",
+    "antworten": ["<body style= 'background-image:url(background.gif)'>", "<body bg ='background.gif'>", "background img ='background.gif'>"],
+    "indexRichtigeAntwort": 0
+  },
+    {
+    "thema": "html",
+    "frage": "Ein <iframe> wird verwendet, um eine Webseite innerhalb einer Webseite anzuzeigen." ,
+    "antworten": ["Es gibt keinen <iframe>", "wahr", "falsch"],
+    "indexRichtigeAntwort": 1
+  },
+    {
+    "thema": "html",
+    "frage": "HTML-Kommentare beginnen mit <! - und enden mit ->" ,
+    "antworten": ["wahr", "falsch"],
+    "indexRichtigeAntwort": 0
+  },
+    {
+    "thema": "html",
+    "frage": "Blockelemente werden normalerweise angezeigt, ohne eine neue Zeile zu beginnen."  ,
+    "antworten": ["wahr", "falsch"],
+    "indexRichtigeAntwort": 1
+  },
+    {
+    "thema": "html",
+    "frage": "Welches HTML-Element definiert den Titel eines Dokuments?",
+    "antworten": ["<meta>", "<titel>", "<head>"],
+    "indexRichtigeAntwort": 1
+  },
+    {
+    "thema": "html",
+    "frage": "Welches HTML-Attribut gibt einen alternativen Text für ein Bild an, wenn das Bild nicht angezeigt werden kann?",
+    "antworten": ["src", "alt", "longdesc", "title" ],
+    "indexRichtigeAntwort": 1
+  },
+    {
+    "thema": "html",
+    "frage": "Welcher Doctype ist für HTML5 richtig?",
+    "antworten": ["<!DOCTYPE HTML5>", "<!DOCTYPE html>",
+      "<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 5.0//EN' 'http://www.w3.org/TR/html5/strict.dtd'>"],
+    "indexRichtigeAntwort": 1
+  },
+    {
+    "thema": "html",
+    "frage": "Mit welchem ​​HTML-Element wird eine Fußzeile für ein Dokument oder einen Abschnitt angegeben?",
+    "antworten": ["<bottom>", "<section>", "<footer>"],
+    "indexRichtigeAntwort": 2
+  },
+    {
+    "thema": "html",
+    "frage": "In HTML können Sie SVG-Elemente direkt in eine HTML-Seite einbetten.",
+    "antworten": ["falsch", "wahr" ],
+    "indexRichtigeAntwort": 1 
+  },
+    {
+    "thema": "html",
+    "frage": "Was ist das richtige HTML-Element zum Abspielen von Videodateien?",
+    "antworten": ["<movie>", "<video>", "<media>"],
+    "indexRichtigeAntwort": 1
+  },
+    { 
+    "thema": "html",
+    "frage": "Was ist das richtige HTML-Element zum Abspielen von Audiodateien?",
+    "antworten": ["<sound>", "<mp3>", "<audio>"],
+    "indexRichtigeAntwort": 2
+  },
+    {
+    "thema": "html",
+    "frage": "Das globale HTML-Attribut 'contenteditable' wird verwendet, um:",
+    "antworten": ["an zu geben, ob der Inhalt eines Elements bearbeitet werden soll oder nicht", "den Inhalt vom Server zu aktualisieren", 
+       "das Kontextmenü für ein Element an zu geben. Das Menü an zu zeigt, wenn ein Benutzer mit der rechten Maustaste auf das Element klickt", 
+       "Die Position des ersten gefundenen Vorkommens von Inhalten innerhalb einer Zeichenfolge zurück zu geben."],
+    "indexRichtigeAntwort": 0
+  },
+    {
+    "thema": "html" ,
+    "frage": "Welches Zeichen kennzeichnet ein End-Tag?",
+    "antworten": ["*", "^", "/", "<"],
+    "indexRichtigeAntwort": 2
+  },
+    {
+    "thema": "html" ,
+    "frage": "In HTML sind onblur und onfocus:",
+    "antworten": ["Event Attribute", "HTML Elemente", "Style Attribute"],
+    "indexRichtigeAntwort": 0
+  },
+    {
+    "thema": "html",
+    "frage": "Von SVG definierte Grafiken haben welches Format?",
+    "antworten": ["CSS", "XML", "HTML"],
+    "indexRichtigeAntwort": 1
+  },
+    {
+    "thema": "html",
+    "frage": "Das HTML-Element <canvas> wird verwendet, um:",
+    "antworten": ["ziehbare Elemente zu Erstellen", "Grafiken zu Zeichnen", "Daten in MySQL zu Bearbeiten","Datenbankdatensätze an zu zeigen"],
+    "indexRichtigeAntwort": 1
+  },
+    {
+    "thema": "html",
+    "frage": "Welches Attribut wird in HTML verwendet, um anzugeben, dass ein Eingabefeld ausgefüllt werden muss?",
+    "antworten": ["placeholder", "formvalidate", "validate", "required" ],
+    "indexRichtigeAntwort": 3
+  },
+    {
+    "thema": "html",
+    "frage": "Welcher Eingabetyp definiert ein Schieberegler-Steuerelement?",
+    "antworten": ["range", "controls", "slider", "search"],
+    "indexRichtigeAntwort": 0
+  },
+    {
+    "thema": "html",
+    "frage": "Mit welchem ​​HTML-Element wird eine Skalarmessung innerhalb eines Bereichs angezeigt?",
+    "antworten": ["<range>", "<meter>", "<measure>", "<gauge>"],
+    "indexRichtigeAntwort": 1
+  },
+    {
+    "thema": "html",
+    "frage": "Welches HTML-Element definiert Navigationslinks?",
+    "antworten": ["<navigate>", "<navigation>", "<nav>" ],
+    "indexRichtigeAntwort": 2
+  },
+    {
+    "thema": "css" ,
+    "frage": "Wofür steht CSS?",
+    "antworten": ["Bunte Stylesheets", "Kaskadierende Stylesheets", "Computer-Stylesheets", "Kreative Stylesheets" ],
+    "indexRichtigeAntwort": 1
+  },
+    {
+    "thema": "css" ,
+    "frage": "Was ist der richtige HTML-Code für den Verweis auf ein externes Stylesheet?",
+    "antworten": ["<stylesheet> mystyle.css</stylesheet>", "<style src='mystyle.css'>", "<link rel='stylesheet' type='text/css' href='mystyle.css'>"],
+    "indexRichtigeAntwort": 2
+  },
+    {
+    "thema":"css" ,
+    "frage": "Welche Eigenschaft wird verwendet, um die Hintergrundfarbe zu ändern?",
+    "antworten": ["color", "background-color", "bgcolor"],
+    "indexRichtigeAntwort": 1
+  },
+    {
+    "thema": "css",
+    "frage": "Wie fügen Sie eine Hintergrundfarbe für alle",
+    "antworten": ["all.h1{background-color:#FFFFFF;}", "h1 {background-color:#FFFFFF;}", "h1.all {background-color:#FFFFFF}" ],
+    "indexRichtigeAntwort": 1
+  },
+    {
+    "thema": "css",
+    "frage": "Welches HTML-Attribut wird zum Definieren von Inlinestilen verwendet?",
+    "antworten": ["class", "front", "style", "Styles"],
+    "indexRichtigeAntwort": 2
+  },
+    {
+    "thema": "css",
+    "frage": "Welches HTML-Tag wird verwendet, um ein internes Stylesheet zu definieren?",
+    "antworten": ["im <body> Abschnitt", "im <head>Abschnitt", "am Ende des Dokuments" ],
+    "indexRichtigeAntwort": 0
+  },
+    {
+    "thema": "css",
+    "frage": "Welche CSS-Eigenschaft wird verwendet, um die Textfarbe eines Elements zu ändern?",
+    "antworten": ["text-color", "color", "fgcolor" ],
+    "indexRichtigeAntwort": 1
+  },
+    {
+    "thema": "javascript" ,
+    "frage":"Wie erstelle ich HTML in JavaScript ohne JSX?" ,
+    "antworten": ["React.createComponent('div', null, 'Hello React!')",
+       "React.createTag('div', null, 'Hello React!')", "React.createClass('div', null, 'Hello React!')",
+       "React.createElement('div', null, 'Hello React!')"],
+    "indexRichtigeAntwort": 3
+  },
+    {
+    "thema": "javascript",
+    "frage": "Was sind Komponenten?",
+    "antworten": ["Tags in HTML", "JS-Objekte, die DOM-Strukturknoten widerspiegeln.", 
+      "Pseudoklassen in CSS", "Rahmen in unserem Projekt"],
+    "indexRichtigeAntwort": 1
+  },
+    {
+    "thema":"javascript",
+    "frage":"Womit kann von JS auf HTML Elemente zu gegriffen werden?",
+    "antworten": ["Document.write", "Document.getObject", "Document.getElementById", "Document.getElement"],
+    "indexRichtigeAntwort": 2
+  },
+    {
+    "thema": "javascript",
+    "frage": "Welches der folgenden Code-Beispiele erhört die Variable nicht um eins?",
+    "antworten": ["i++", "i=i+1", "i+=-1", "i=i-1*(-1)", "i-=(-1)"],
+    "indexRichtigeAntwort": 2
+  },
+    {
+    "thema": "javascript",
+    "frage":"Welchen der folgenden logischen Operatoren gibt es nicht?",
+    "antworten": ["<!", "&&", "||", "<=", "!="],
+    "indexRichtigeAntwort": 0
+  },
+    {
+    "thema": "javascript",
+    "frage": "Was ist die richtige Syntax um eine Funktion zu deklarieren?",
+    "antworten": ["MyFunction(){}", "Function(){}", "function MyFunction(){}"],
+    "indexRichtigeAntwort": 2
+  },
+    {
+    "thema":"javascript",
+    "frage":"Var a = 100 + 'hundert'; Welchen Datentyp wird die Variable a haben?",
+    "antworten": ["Integer", "String", "Float", "Nummer"],
+    "indexRichtigeAntwort": 1
+  },
+    {
+    "thema": "javascript",
+    "frage": "Wie verändert man den Text von: <p id='demo'>Das ist eine Demonstration.</p>",
+    "antworten": ["document.getElementByName(“p”).innerHTML='Hello World!'","document.getElementById(“demo”).innerHTML='Hello World!'",
+       "document.getElement(“p”).innerHTML=”Hello World'"],
+    "indexRichtigeAntwort": 1
+  }, 
+    {
+    "thema": "javascript",
+    "frage": "Was macht der Befehl .charAt()?",
+    "antworten": ["Er gibt den Index an, andem das übergebene Wort beginnt",
+      "Er gibt den char zurück, an dem index, den man ihm gibt",
+      "Er gibt ein array zurück, wo der String an den übergebenem String gespalten wurde"],
+    "indexRichtigeAntwort": 1
+  },
+    {
+    "thema": "javascript" ,
+    "frage": "Welches der folgenden Objekte ist ein serverseitiges Java Script-Objekt?",
+    "antworten": ["Function", "File", "FileUpload", "Date"],
+    "indexRichtigeAntwort": 1
+  },
+    {
+    "thema": "javascript" ,
+    "frage": "Java-Skript kann zum Speichern des Formularinhalts in einer Datenbankdatei auf dem Server verwendet werden?",
+    "antworten": ["falsch", "wahr"],
+    "indexRichtigeAntwort": 0
+  },
+    {
+    "thema": "javascript",
+    "frage": "Welches Tag wird verwendet, um ein JavaScript in eine HTML-Seite einzufügen?",
+    "antworten": ["< script=’java’>", "< javascript>", "< script>", "<js>"],
+    "indexRichtigeAntwort": 2
+  },
+    {
+    "thema": "javascript",
+    "frage": "Welche der folgenden Zeichen wird im Java-Skript zum Einfügen von Sonderzeichen verwendet?",
+    "antworten": ["&", "/",  "-", "%"],
+    "indexRichtigeAntwort": 1
+  },
+    {
+    "thema": "javascript",
+    "frage": "Wie speichert Java Script Datumsangaben in Objekten vom Typ 'Datum'?",
+    "antworten": ["Die Anzahl der Tage seit dem 1. Januar 1900", "Die Anzahl der Sekunden seit dem 1. Januar 1970",
+      "Die Anzahl der Millisekunden seit dem 1. Januar 1970", "Die Anzahl der Pikosekunden seit dem 1. Januar 1970"],
+    "indexRichtigeAntwort": 1
+  },
+    {
+    "thema": "javascript",
+    "frage": "C-Stil-Scoping auf Blockebene wird im Java-Skript nicht unterstützt",
+    "antworten": ["falsch", "wahr"],
+    "indexRichtigeAntwort": 1
+  },
+    {
+    "thema": "javascript",
+    "frage": "JavaScript ignoriert zusätzliche Leerzeichen",
+    "antworten": ["falsch", "wahr"],
+    "indexRichtigeAntwort": 0
+  },
+    {
+    "thema":"javascript",
+    "frage": "Wie ist der richtige Weg, um ein JavaScript-Array zu schreiben?" ,
+    "antworten": ["var txt = new Array(1:'arr',2:'kim',3:'jim')", "var txt = new Array:1=('arr')2=('kim')3=('jim')",
+      "var txt = new Array('arr', 'kim', 'jim')", "var txt = new Array='arr', 'kim', 'jim'"],
+    "indexRichtigeAntwort": 2
+  },
+    {
+    "thema": "javascript",
+    "frage": "Welche der folgenden Optionen ist richtig, um 'Hello World' auf der Webseite zu schreiben?",
+    "antworten": ["System.out.println(“Hello World”)", "print(“Hello World”)", "document.write(“Hello World”)",
+       "response.write(“Hello World”)"],
+    "indexRichtigeAntwort": 2
+  },
+    {
+    "thema": "javascript",
+    "frage": "Wie fügt man einen Wert an ein Array von Java Script an?",
+    "antworten": ["arr[arr.length] = value", "arr[arr.length+1] = new Arrays()", "arr[arr.length-1] = value",
+       "arr[arr.length*1] = value"],
+    "indexRichtigeAntwort": 0
+  },
+    {
+    "thema": "javascript",
+    "frage":"Java Script entities start with ____________ and end with ______________",
+    "antworten": ["Semicolon, colon", "Semicolon, Ampersand", "Ampersand, colon", "Ampersand, semicolon"],
+    "indexRichtigeAntwort": 3
+  },
+    {
+    "thema": "javascript",
+    "frage": "Java Script unterstützt alle booleschen Operatoren",
+    "antworten": ["wahr", "falsch"],
+    "indexRichtigeAntwort": 1
+  },
+    {
+    "thema":"javascript",
+    "frage": "Welche der folgenden Methoden wird verwendet, um eine Zeichenfolge von JavaScript-Code, im Kontext des angegeben Objekts auszuwerten?",
+    "antworten": ["Eval", "ParseDoule", "ParseObject", "Efloat"],
+    "indexRichtigeAntwort": 0
+  },
+    {
+    "thema": "javascript",
+    "frage": "JavaScript ignoriert zusätzliche Leerzeichen?",
+    "antworten": ["wahr", "falsch"],
+    "indexRichtigeAntwort": 0
+  },
+    {
+    "thema":"javascript",
+    "frage": "Ist es möglich, eine Variable in Java Script entlang ihres Typs zu deklarieren?",
+    "antworten": ["ja", "nein"],
+    "indexRichtigeAntwort": 0
+  }, 
+    {
+    "thema": "javascript",
+    "frage": "Welcher Java-Wrappertyp wird erstellt, wenn ein JavaScript-Objekt an Java gesendet wird?",
+    "antworten": ["ScriptObject", "JavaObject", "Jobject", "JSObject"],
+    "indexRichtigeAntwort": 3
+  },
+    {
+    "thema": "javascript",
+    "frage": "Welches der folgenden Objekte ist ein clientseitiges Java Script-Objekt?",
+    "antworten": ["File", "Function", "FileUpload", "Time"],
+    "indexRichtigeAntwort": 2
+  },
+    {
+    "thema": "javascript",
+    "frage": "Wie lautet der alternative Name für Java-Skript?",
+    "antworten": ["LimeScript", "Sowohl a als auch d", "ECMScript", "ECMAScript"],
+    "indexRichtigeAntwort": 3
+  },
+    {
+    "thema": "javascript",
+    "frage": "Datei ist ein serverseitiges JavaScript-Objekt?",
+    "antworten": ["wahr", "falsch"],
+    "indexRichtigeAntwort": 0
+  },
+    {
+    "thema": "javascript",
+    "frage": "Warum haben Java und JavaScript einen ähnlichen Namen?",
+    "antworten": ["Java Script ist eine abgespeckte Version von Java", "Der Syntax von JavaScript basiert etwas auf dem Java-Syntax",
+      "Beide unterstützen objectorientierte Programmierung", "Keine der oben genannten" ],
+    "indexRichtigeAntwort": 1
+  },
+    {
+    "thema": "javascript",
+    "frage":"Welche Sprache definiert das Verhalten einer Webseite?",
+    "antworten": ["HTML", "CSS", "XML", "Java Script"],
+    "indexRichtigeAntwort": 3
+  },
+    {
+    "thema": "javascript",
+    "frage": "___________ JavaScript wird auch als clientseitiges JavaScript bezeichnet.",
+    "antworten": ["Microsoft", "Navigator", "LiveWire", "Native"],
+    "indexRichtigeAntwort": 1
+  },
+    {
+    "thema": "javascript",
+    "frage": "Was ist negative Unendlichkeit in Java-Skript?",
+    "antworten": ["Einer der folgenden", "In JavaScript, abgeleitet durch Dividierung der Zahl durch eine negative Zahl.", 
+     "Nummer in JavaScript, abgeleitet durch Division der Zahl durch Null.", 
+    "Anzahl in JavaScript, abgeleitet durch Division der negativen Zahl durch Null"],
+    "indexRichtigeAntwort": 3
+  },
+    {
+    "thema": "javascript",
+    "frage":"Javascript ist eine objektorientierte Sprache?",
+    "antworten": ["falsch", "wahr"],
+    "indexRichtigeAntwort": 1
+  },
+    {
+    "thema": "javascript",
+    "frage": "Welches der folgenden Schritte wird verwendet, um alle Klickereignisse in einem Fenster zu erfassen?",
+    "antworten": ["window.captureEvents(Event.CLICK)", "window.routeEvents(Event.CLICK )", "window.handleEvents (Event.CLICK)",
+      "window.raiseEvents(Event.CLICK )"],
+    "indexRichtigeAntwort": 0
+  }
+]
+
