@@ -504,6 +504,6 @@
     "antworten": ["window.captureEvents(Event.CLICK)", "window.routeEvents(Event.CLICK )", "window.handleEvents (Event.CLICK)",
       "window.raiseEvents(Event.CLICK )"],
     "indexRichtigeAntwort": 0
-  },
+  }
 ]
 
