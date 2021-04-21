@@ -911,8 +911,5 @@
       "antworten":[":link, :hover, :active, :visited", ":link, :visited, :hover, :active", 
         ":active, :link, :hover, :visited", ":active, :hover, :visited, :link"],
       "indexRichtigeAntwort": 1
-    }
+  }
 ]
-
-   
-  

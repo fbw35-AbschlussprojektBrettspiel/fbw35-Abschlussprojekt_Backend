@@ -8,13 +8,6 @@ npm install
 
 .env im Rootverzeichnis anlegen
 
-```
-PORT=3050
-DB=mongodb+srv://huang:d7A3eF@clusteryay.0lxey.mongodb.net/quizfragen?retryWrites=true&w=majority
-```
-
-DB ist der Atlas Cloud Datenbank auf Anton's Konto.
-
 ### `npm start`
 
 startet den Server aufn Port 3050.
@@ -23,3 +16,7 @@ startet den Server aufn Port 3050.
 ### `npm run watch`
 
 startet den Server mit nodemon
+
+### `npm run pushJson datei.json`
+
+pusht das Objekt aus der json-Datei, die im Ordner public liegen soll, auf die Datenbank
