@@ -56,7 +56,7 @@
     "positionsAenderung": -4
   },
     {
-    "beschreibung": "Das Uplode eines wichtigen Programmes zeigt fehler an. Jetzt musst du nach dem Fehler suchen. Gehe 2 Felder zurück. ",
+    "beschreibung": "Das Uplode eines wichtigen Programmes zeigt Fehler an. Jetzt musst du nach dem Fehler suchen. Gehe 2 Felder zurück. ",
     "positionsAenderung": -2 
   },
     {
@@ -64,11 +64,11 @@
     "positionsAenderung": -1
   },
     {
-    "beschreibung": "Du nutzt den falschen Hochlade-Code und musst erst nachfragen. Gehe 2 Felder zurück",
+    "beschreibung": "Du nutzt den falschen Code zum Hochladen und musst erst nachfragen. Gehe 2 Felder zurück",
     "positionsAenderung": -2 
   },
     {
-    "beschreibung": "",
+    "beschreibung": "Du fühlst dich heute richtig gut und kommst deshalb gut vorwärts. Gehe 2 Felder",
     "positionsAenderung": 0 
   },
     {
