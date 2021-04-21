@@ -7,6 +7,7 @@ const errorMiddleware = require('./middleware/errorMiddleware');
 
 // Routes importieren
 const fragenRouter = require('./routes/fragen');
+const aktionenRouter = require('./routes/aktionen');
 
 const URI = process.env.DB || 'mongodb://localhost:27017/quizfragen';
 const port = process.env.PORT || 3050;
@@ -34,6 +35,7 @@ app.use(express.static('public'));
 
 // Routes
 app.use('/fragen', fragenRouter);
+app.use('/aktionen', aktionenRouter);
 
 // Fehler-Middleware
 app.use(errorMiddleware);
