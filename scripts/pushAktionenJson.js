@@ -2,7 +2,7 @@ require('dotenv').config();
 
 const mongoose = require('mongoose');
 const fs = require('fs');
-const Frage = require('../models/frage-model');
+const Aktion = require('../models/aktion-model');
 const meineArgs = process.argv.slice(2);
 const dateiName = meineArgs[0];
 
@@ -26,11 +26,12 @@ db.once('open', async () => {
 
   try {
     const data = await fs.promises.readFile('./public/' + dateiName);
-    const fragenArray = JSON.parse(data);
-    const values = await Frage.insertMany(fragenArray);
+    const aktionenArray = JSON.parse(data);
+    const values = await Aktion.insertMany(aktionenArray);
     console.log("erfolgreich auf die Datenbank gepusht.", values);
     db.close();
   } catch (err) {
     console.log(err);
+    db.close();
   }
 });
