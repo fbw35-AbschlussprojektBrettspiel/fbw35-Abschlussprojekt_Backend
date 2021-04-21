@@ -68,64 +68,55 @@
     "positionsAenderung": -2 
   },
     {
-    "beschreibung": "Du fühlst dich heute richtig gut und kommst deshalb gut vorwärts. Gehe 2 Felder",
-    "positionsAenderung": 0 
+    "beschreibung": "Du fühlst dich heute richtig gut und kommst deshalb gut vorwärts. Gehe 2 Felder vor",
+    "positionsAenderung": 2
   },
     {
-    "beschreibung": "",
-    "positionsAenderung": 0 
+    "beschreibung": "Deine Blumen sind alle vertrocknet. Du musst sie jetzt giessen. Gehe 2 Felder zurück.",
+    "positionsAenderung": -2 
   },
     {
-    "beschreibung": "",
-    "positionsAenderung": 0 
+    "beschreibung": "Du bist in einer Videokonverenz und es gibt einen regen Austausch. Gehe 3 Felder vor.",
+    "positionsAenderung": 3
  },
-
-
     {
     "beschreibung": "Wie zieht ein Entwickler seine Freundin aus? 'getStringFromQbject' ",
-    "positionsAenderung": 0
+    "positionsAenderung": 1
  },
     {   
     "beschreibung": "Was sagt ein Entwickler, wenn er auf die Welt kommt? 'Hallo Welt!'",
-    "positionsAenderung": 0 
+    "positionsAenderung": -1
  },
     {
     "beschreibung": "Wie viele Entwickler braucht man, um eine Glühbirne zu wechseln? 'Keinen, es ist ein Hardware-Problem.'",
-    "positionsAenderung": 0 
+    "positionsAenderung": -2
  },
     {
     "beschreibung": "Was macht ein Entwickler, wenn sein Auto nicht anspringt? 'Tür auf, Tür wieder zu und nochmal versuchen.'",
-    "positionsAenderung": 0
+    "positionsAenderung": 1
  },
    {
     "beschreibung":"Was schreit ein Entwickler in Gefahr? 'F1!' ",
-    "positionsAenderung": 0
+    "positionsAenderung": -1
  },
    {
      "beschreibung":"Was hat Windows und ein U-Boot gemeinsam? 'Macht man ein Fenster auf, fangen die Probleme an.'",
-     "positionsAenderung": 0
+     "positionsAenderung": 1
  },
     {
-        "beschreibung": "Das müsste jetzt funktionieren.",
-        "positionsAenderung": 0
+     "beschreibung": "Das müsste jetzt funktionieren.",
+     "positionsAenderung": -1
  },
     {
         "beschreibung":"Der letzte Wunsch eines Entwicklers: 'Bitte ein bit.'",
-        "positionsAenderung": 0
+        "positionsAenderung": -1
  },
     {
         "beschreibung":"Linux wird nie das meist installierte Betriebssystem sein, wenn man bedenkt, wie oft man Windows neu installieren muss.",
-        "positionsAenderung": 0
+        "positionsAenderung": 2
  },
     {
-        "beschreibung":"Warum mögen Frauen objektorientierte Programmierer?  'Weil sie Klasse haben'",
-        "positionsAenderung": 0
+        "beschreibung":"Warum mögen Frauen objektorientierte Programmierer? 'Weil sie Klasse haben'",
+        "positionsAenderung": -1
     }
-
-
-  
-  
-  
-  
-  
 ]
