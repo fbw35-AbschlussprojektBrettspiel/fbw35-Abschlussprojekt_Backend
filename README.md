@@ -17,6 +17,10 @@ startet den Server aufn Port 3050.
 
 startet den Server mit nodemon
 
-### `npm run pushJson datei.json`
+### `npm run pushFragen datei.json`
 
-pusht das Objekt aus der json-Datei, die im Ordner public liegen soll, auf die Datenbank
+pusht die Fragen aus der json-Datei, die im Ordner public liegen soll, auf die Datenbank
+
+### `npm run pushAktionen datei.json`
+
+pusht die Aktionen aus der json-Datei, die im Ordner public liegen soll, auf die Datenbank
