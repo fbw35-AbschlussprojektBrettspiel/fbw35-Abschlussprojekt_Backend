@@ -278,8 +278,8 @@
     {
     "thema": "css",
     "frage": "Welches HTML-Tag wird verwendet, um ein internes Stylesheet zu definieren?",
-    "antworten": ["im <body> Abschnitt", "im <head>Abschnitt", "am Ende des Dokuments" ],
-    "indexRichtigeAntwort": 0
+    "antworten": ["<script>", "<style>", "<css>" ],
+    "indexRichtigeAntwort": 1
   },
     {
     "thema": "css",
@@ -504,6 +504,412 @@
     "antworten": ["window.captureEvents(Event.CLICK)", "window.routeEvents(Event.CLICK )", "window.handleEvents (Event.CLICK)",
       "window.raiseEvents(Event.CLICK )"],
     "indexRichtigeAntwort": 0
+  },
+   {
+    "thema": "css",
+    "frage": "Welches ist die richtige CSS-Syntax?",
+    "antworten": ["{body;color:black}", "body:color=black", "{body:color=black;}", "body{color:black;}"],
+    "indexRichtigeAntwort": 3
+  },
+    {
+    "thema": "css",
+    "frage": "Wie fügen Sie einen Kommentar in eine CSS-Datei ein?",
+    "antworten": ["//dies ist ein Kommentar//", "`dies ist ein Kommentar", "//dies ist ein Kommentar", "/*dies ist ein Kommentar*/"],
+    "indexRichtigeAntwort": 3
+  },
+    {
+    "thema": "css",
+    "frage": "Welche CSS-Eigenschaft steuert die Textgröße?",
+    "antworten": ["text-size", "font-size", "font-style", "text-style"],
+    "indexRichtigeAntwort": 1
+  },
+    {
+    "thema": "css",
+    "frage": "Was ist die richtige CSS-Syntax, um alle",
+    "antworten": ["<p style='font-size:bold;'>", "<p style='text-size:bold;'>", "p {text-size:bold;}","p {font-weight:bold;}"],
+    "indexRichtigeAntwort": 3
+  },
+    {
+    "thema": "css",
+    "frage": "Wie lässt man jedes Wort in einem Text mit einem Großbuchstaben beginnen?",
+    "antworten": ["Dies geht nicht mit CSS", "text-style:capitalize", "transform:capitalize", "text-transform:capitalize" ],
+    "indexRichtigeAntwort": 3
+  },
+    {
+    "thema": "css",
+    "frage": "Wie zeigen Sie Hyperlinks ohne Unterstreichung an?",
+    "antworten": ["a {underline:none;}", "a {text-decoration:no-underline;}", "a {text-decoration:none;}", "a {decoration:no-underline;}" ],
+    "indexRichtigeAntwort": 2
+  },
+    {
+    "thema": "css",
+    "frage": "Wo in einem HTML-Dokument befindet sich der richtige Ort, um auf ein externes Stylesheet zu verweisen?",
+    "antworten": ["im <body> Abschnitt", "im <head>Abschnitt", "am Ende des Dokuments"],
+    "indexRichtigeAntwort": 1
+  },
+    {
+    "thema": "css",
+    "frage": "Welche Eigenschaft wird verwendet, um die Schriftart eines Elements zu ändern?",
+    "antworten": ["font-stylefont-style", "font-weight", "font-family"],
+    "indexRichtigeAntwort": 2
+  },
+    {
+    "thema": "css",
+    "frage": "Wie machen Sie den Text fett?",
+    "antworten": ["font:bold", "style:bold", "font-weight:bold"],
+    "indexRichtigeAntwort": 2
+  },
+    {
+    "thema": "css",
+    "frage": "Wie zeigt man den folgenden Rahmen an: der obere Rahmen = 10 Pixel; der untere Rahmen = 5 Pixel Der linke Rahmen = 20 Pixel Der rechte Rahmen = 1 Pixel?",
+    "antworten": ["border-width:10px 5px 20px 1px", "border-width:10px 20px 5px 1px", "border-width:5px 20px 10px 1px", "border-width:10px 1px 5px 20px"],
+    "indexRichtigeAntwort": 0
+  },
+    {
+    "thema": "css",
+    "frage": "Welche Eigenschaft wird verwendet, um den linken Rand eines Elements zu ändern?",
+    "antworten": ["indent", "padding-left", "margin-left"],
+    "indexRichtigeAntwort": 2
+  },
+    {
+    "thema": "css",
+    "frage": "Bei Verwendung der Padding-Eigenschaft; dürfen Sie negative Werte verwenden?",
+    "antworten": ["ja", "nein", "manchmal"],
+    "indexRichtigeAntwort": 1
+  },  
+    {
+    "thema": "css",
+    "frage": "Wie erstellen Sie eine Liste, die ihre Elemente mit Quadraten auflistet?",
+    "antworten": ["list-style-type:square", "list-type:square", "list:square"],
+    "indexRichtigeAntwort": 0
+  },
+    {
+    "thema": "css",
+    "frage": "Wie wählen Sie ein Element mit der ID 'demo'?",
+    "antworten": ["demo", ".demo", "*demo", "#demo" ],
+    "indexRichtigeAntwort": 3
+  },
+    {
+    "thema": "css",
+    "frage": "Wie wählen Sie Elemente mit dem Klassennamen 'test'?",
+    "antworten": ["*test", ".test", "#test", "test"],
+    "indexRichtigeAntwort": 1
+  },
+    {
+    "thema": "css",
+    "frage": "Wie wählt man alle p-Elemente innerhalb eines div-Elements aus?",
+    "antworten": ["div + p", "div.p", "div p"],
+    "indexRichtigeAntwort": 2
+  },
+    {
+    "thema": "css",
+    "frage": "Wie gruppiert man Selektoren?",
+    "antworten": ["Trenne jeden Selektor mit einem Leerzeichen", "Trenne jeden Selektor mit einem Komma", "Trenne jeden Selektor mit einem Plus-Zeichen"],
+    "indexRichtigeAntwort": 1
+  },
+    {
+    "thema": "css",
+    "frage": "Was ist der Standardwert der positions-Eigenschaft?",
+    "antworten": ["absolute", "fixed", "relative", "static"],
+    "indexRichtigeAntwort": 3
+  },
+    {
+    "thema": "html" ,
+    "frage": "Eine ungeordnete Liste (<ul>) verwendet als Aufzählungszeichen",
+    "antworten": ["Ziffern und Zahlen", "Buchstaben", "römische Zahlen", "Punkte"],
+    "indexRichtigeAntwort": 3
+  },
+    {
+    "thema": "html",
+    "frage": "Womit beginnt eine geordnete Liste (<ol>) per Default zu zählen?",
+    "antworten": ["0", "1", "mit einem Punkt", "gar nicht"],
+    "indexRichtigeAntwort": 1
+  },
+    {
+    "thema":"bootstrap" ,
+    "frage": "Bootstrap 3 ist mobile-first.",
+    "antworten": ["falsch", "wahr"],
+    "indexRichtigeAntwort": 1
+  },
+    {
+    "thema":"bootstrap",
+    "frage": "Die .container-Klasse stellt einen Container mit voller Breite bereit, der sich über die gesamte Breite des Bildschirms erstreckt.",
+    "antworten": ["falsch", "wahr"],
+    "indexRichtigeAntwort": 0
+  },
+    {
+    "thema": "bootstrap",
+    "frage": "Welche Klasse stellt einen reaktionsfähigen Container mit fester Breite bereit?",
+    "antworten": [".container-fixiert", ".container-fluid", ".container"],
+    "indexRichtigeAntwort": 2
+  },
+    {
+    "thema": "bootstrap",
+    "frage": "Welche Klasse stellt einen Container mit voller Breite bereit, der sich über die gesamte Breite des Ansichtsfensters erstreckt?",
+    "antworten": [".container", ".container-fixiert", ".container-fluid"],
+    "indexRichtigeAntwort": 2
+  },
+    {
+    "thema":"bootstrap" ,
+    "frage": "Das Bootstrap-Rastersystem basiert auf wie vielen Spalten?",
+    "antworten": ["3", "9", "12", "6"],
+    "indexRichtigeAntwort": 2
+  },
+    {
+    "thema":"bootstrap",
+    "frage": "Welche Klasse fügt Zebrastreifen zu einem Tisch hinzu?",
+    "antworten": [".table-umrandet", ".even und .odd", ".table-zebra", ".tischgestreift"],
+    "indexRichtigeAntwort": 3
+  },
+    {
+    "thema": "bootstrap",
+    "frage": "Welche Klasse formt ein Bild zu einem Kreis?",
+    "antworten": [".img-kreis", ".img-rounded", ".img-rund", ".img-thumbnail"],
+    "indexRichtigeAntwort": 0
+  },
+    {
+    "thema": "bootstrap",
+    "frage": "Welche Klasse wird verwendet, um eine große Box zu erstellen, um zusätzliche Aufmerksamkeit zu erregen?",
+    "antworten": [".container", ".jumbotron", ".bigbox"],
+    "indexRichtigeAntwort": 1
+  },
+    {
+    "thema":"bootstrap" ,
+    "frage": "Welche Schaltflächenklasse wird verwendet, um eine große Schaltfläche zu erstellen?",
+    "antworten": [".btn-lg", ".btn-groß", ".btn-l", ".btn-xl"],
+    "indexRichtigeAntwort": 0
+  },
+    {
+    "thema":"bootstrap",
+    "frage": "Welche Klasse wird zum Erstellen einer Schaltflächengruppe verwendet?",
+    "antworten": [".group-button", ".group-btn", ".btn-gruppe", ".button-gruppe"],
+    "indexRichtigeAntwort": 2
+  },
+    {
+    "thema": "bootstrap",
+    "frage": "Wie können Sie ein Suchsymbol einfügen?",
+    "antworten": ["<span class='Glyphen-Glyphensuche'></span>", "<span class='glyphicon glyphicon-search'></span>", "<span class='glyphicon-search'></span>", 
+    "<span class='Glyphicon-Suche'></span>"],
+    "indexRichtigeAntwort": 1
+  },
+    {
+    "thema": "bootstrap",
+    "frage": "Welche Klasse wird zum Erstellen eines Badges verwendet?",
+    "antworten": [".badge", ".label", ".flag", ".tag"],
+    "indexRichtigeAntwort": 0
+  },
+    {
+    "thema":"bootstrap" ,
+    "frage": "Welche Klasse wird verwendet, um eine grundlegende Paginierung zu erstellen?",
+    "antworten": [".navigation", ".pages", ".page", ".pagination"],
+    "indexRichtigeAntwort": 3
+  },
+    {
+    "thema":"bootstrap",
+    "frage": "Welche Klasse wird zum Erstellen einer grundlegenden Listengruppe verwendet?",
+    "antworten": [".list-gruppe", ".group-liste", ".grouped-liste"],
+    "indexRichtigeAntwort": 0
+  },
+    {
+    "thema": "bootstrap",
+    "frage": "Welche Klasse fügt einem Bedienfeld eine Überschrift hinzu?",
+    "antworten": [".panel-footer", ".panel-header", ".panel-Überschrift", ".panel-head"],
+    "indexRichtigeAntwort": 2
+  },
+    {
+    "thema": "bootstrap",
+    "frage": "Welche Klasse zeigt ein Dropdownmenü an?",
+    "antworten": [".select", ".dropdown", ".dropdown-liste"],
+    "indexRichtigeAntwort": 1
+  },
+     {
+    "thema":"bootstrap",
+    "frage": "Eine Standard-Navigationsregisterkarte wird erstellt mit:",
+    "antworten": ["<ul class='navigation-tabs'>", "<ul class='nav nav-navbar'>", "<ul class='nav nav-tabs'>", "<ul class='nav tabs'>"],
+    "indexRichtigeAntwort": 2
+  },
+    {
+    "thema":"bootstrap",
+    "frage": "Eine Standard-Navigationsleiste in Bootstrap3 wird erstellt mit:",
+    "antworten": ["<nav class='navigationbar navbar-default'>", "<nav class='navbar default-navba'>", 
+    "<nav class='navbar navbar-default'>", "<nav class='nav navbar'>"],
+    "indexRichtigeAntwort": 2
+  },
+    {
+    "thema": "bootstrap",
+    "frage": "Eine Standard-Navigationsleiste in Bootstrap4 wird erstellt mit:",
+    "antworten": ["<nav class='navigationbar navbar-default'>", "<nav class='nav navbar'>",
+    "<nav class='navbar navbar-default'>", "<nav class='navbar navbar-expand-sm'>"],
+    "indexRichtigeAntwort": 3
+  },
+    {
+    "thema": "bootstrap",
+    "frage": "Welche Klasse wird zum Erstellen einer schwarzen Navigationsleiste verwendet?",
+    "antworten": [".navbar-dunkel", ".navbar-default", ".navbar-inverse", ".navbar-schwarz"],
+    "indexRichtigeAntwort": 2
+  },
+    {
+    "thema":"bootstrap",
+    "frage": "Welches Plugin wird verwendet, um durch Elemente zu radeln, wie eine Diashow?",
+    "antworten": ["Umlaufbahn", "Diashow", "Scrollspy", "Karussell"],
+    "indexRichtigeAntwort": 3
+  },
+    {
+    "thema":"bootstrap",
+    "frage": "Welches Plugin wird verwendet, um ein modales Fenster zu erstellen?",
+    "antworten": ["Dialogfeld", "Fenster", "Popup", "Modale"],
+    "indexRichtigeAntwort": 3
+  },
+    {
+    "thema": "bootstrap",
+    "frage": "Welches Plugin wird verwendet, um eine QuickInfo zu erstellen?",
+    "antworten": ["Quickinfo", "Modale", "Dialogfeld", "Popup"],
+    "indexRichtigeAntwort": 0
+  },
+    {
+    "thema": "bootstrap",
+    "frage": "Welche Kontextklasse weist auf eine erfolgreiche oder positive Aktion hin?",
+    "antworten": [".text-info", ".text-success", ".text-primär", ".text-Warnung"],
+    "indexRichtigeAntwort": 1
+  },
+    {
+    "thema": "bootstrap",
+    "frage": "Welche Kontextklasse weist auf eine gefährliche oder potenziell negative Aktion hin?",
+    "antworten": [".text-primär", ".text-Warnung", ".text-Gefahr", ".text-info"],
+    "indexRichtigeAntwort": 2
+  },
+    {
+    "thema":"bootstrap" ,
+    "frage": "Welche Klasse gibt Großbuchstabentext an?",
+    "antworten": [".groß", ".text-großgroß", ".ucase", ".text-großschreiben"],
+    "indexRichtigeAntwort": 1
+  },
+    {
+    "thema":"bootstrap",
+    "frage": "Das Bootstrap-Rastersystem funktioniert auf mehreren Geräten.",
+    "antworten": ["falsch", "wahr"],
+    "indexRichtigeAntwort": 1
+  },
+    {
+    "thema": "bootstrap",
+    "frage": "Welche Kontextklasse wird verwendet, um eine orange Textfarbe zu erstellen?",
+    "antworten": [".txt-Warnung", ".bg-Warnung", ".txt-orange", ".text-Warnung"],
+    "indexRichtigeAntwort": 3
+  },
+    {
+    "thema": "bootstrap",
+    "frage": "Welche Klasse wird zum Erstellen eines Laders verwendet?",
+    "antworten": [".spinner-loader", ".spinner", ".spinner-border", ".loader"],
+    "indexRichtigeAntwort": 2
+  },
+    {
+    "thema": "bootstrap",
+    "frage": "Welche Klasse fügt einer Karte eine Überschrift hinzu?",
+    "antworten": [".card-head", ".card-header", ".card-footer", ".card-heading"],
+    "indexRichtigeAntwort": 2
+  },
+    {
+    "thema":"bootstrap" ,
+    "frage": "Welche Klasse wird zum Erstellen einer vertikalen Navigationsleiste verwendet?",
+    "antworten": [".navbar-inverse", ".navbar navbar-vertical", ".navbar-vertical", ".navbar"],
+    "indexRichtigeAntwort": 3
+  },
+    {
+    "thema":"bootstrap",
+    "frage": "Welche Klassen können kombiniert werden, um ein benutzerdefiniertes Kontrollkästchen zu erstellen?",
+    "antworten": ["checkbox control", "custom-check custom-checkbox", "custom-control custom-checkbox"],
+    "indexRichtigeAntwort": 2
+  },
+    {
+    "thema": "bootstrap",
+    "frage": "Welches Attribut wird zum Erstellen einer QuickInfo verwendet?",
+    "antworten": ["data-toggle='popup'", "data-toggle='modal'", "data-toggle='collapse'",
+    "data-toggle='tooltip'"],
+    "indexRichtigeAntwort": 3
+  },
+    {
+    "thema": "bootstrap",
+    "frage": "Welche Kontextklasse weist auf eine erfolgreiche oder positive Aktion hin?",
+    "antworten": [".bg-info", ".bg-warning", ".bg-primary", ".bg-success"],
+    "indexRichtigeAntwort": 3
+  }, 
+    {
+    "thema": "bootstrap",
+    "frage": "Welche Kontextklasse weist auf eine gefährliche oder potenziell negative Aktion hin?",
+    "antworten": [".bg-info", ".bg-primary", ".bg-warning", ".bg-danger"],
+    "indexRichtigeAntwort": 3
+  },
+    {
+    "thema":"html" ,
+    "frage": "Welches HTML-Tag wird, wenn es fehlt, NICHT automatisch vom Parser ergänzt?",
+    "antworten": ["<table>", "<tbody>", "<body>",  "<head>"],
+    "indexRichtigeAntwort": 0
+  },
+    {
+    "thema":"html",
+    "frage": "Manche HTML-Tags dürften theoretisch weggelassen werden, weil sie der Parser automatisch einfügen würde.",
+    "antworten": ["Stimmt", "Stimmt nicht", "Kompletter Blödsinn", "Hä??"],
+    "indexRichtigeAntwort": 0
+  },
+    {
+    "thema": "html",
+    "frage": "Man kann eigene HTML-Attribute 'erfinden' und verwenden.",
+    "antworten": ["Ja, mit 'new-attribute'.", "Ja, mit 'attr-'.", "Ja, mit 'data-'.", "Nein, kompletter Blödsinn"],
+    "indexRichtigeAntwort": 2
+  },
+    {
+    "thema": "css",
+    "frage": "Was ist im CSS Box-Modell für den Außenabstand zuständig?",
+    "antworten": ["padding", "margin", "width"],
+    "indexRichtigeAntwort": 1
+  },
+    {
+    "thema": "css",
+    "frage": "Welcher Tag stimmt, dass die Überschrift rot gefärbt wird?",
+    "antworten": ["h { background-color: red;}", "body { color: red;}", "h { color: red;}"],
+    "indexRichtigeAntwort": 2
+  },
+    {
+    "thema":"html" ,
+    "frage": "Der korrekte Syntax für HTML-Attribute ist:",
+    "antworten": ["#attribute: value;", "attribute { value }", "attribute = 'value'", "attribute: value,"],
+    "indexRichtigeAntwort": 2
+  },
+    {
+    "thema":"html",
+    "frage": "In welchem Tag steht der Text, der im Reiter-Tab des Browsers erscheint?",
+    "antworten": ["<tab>", "<title>", "<text>", "<caption>"],
+    "indexRichtigeAntwort": 1
+  },
+    {
+    "thema": "html",
+    "frage": "Welches der folgenden ist KEIN Blockelement?",
+    "antworten": ["<div>", "<span>", "<article>", "<p>"],
+    "indexRichtigeAntwort": 1
+  },
+    {
+    "thema": "html",
+    "frage": "Welcher Tag unterteilt in einer Tabelle den Body?",
+    "antworten": ["<thead>...</thead>", "<tbody>...<tbody/>", "<tbody>...</tbody>"],
+    "indexRichtigeAntwort": 2
+  },
+    { 
+      "thema":"css",
+      "frage": "Deklarationen stehen in CSS in welchen Klammern?",
+      "antworten": ["eckige Klammern []", "runde Klammern ()", "geschweifte Klammern {}", "spitzen Klammern <>"],
+      "indexRichtigeAntwort": 2
+  },
+    {
+      "thema":"css",
+      "frage": "Welchen Selektor gibt es NICHT?",
+      "antworten":["Attributselektor", "Klassenselektor", "Universalselektor", "Namensselektor"],
+      "indexRichtigeAntwort": 3
+  },
+    {
+      "thema":"css",
+      "frage":"In welcher Reihenfolge werden die Link-Pseudo-Klassen korrekt angesprochen?",
+      "antworten":[":link, :hover, :active, :visited", ":link, :visited, :hover, :active", 
+        ":active, :link, :hover, :visited", ":active, :hover, :visited, :link"],
+      "indexRichtigeAntwort": 1
   }
 ]
-

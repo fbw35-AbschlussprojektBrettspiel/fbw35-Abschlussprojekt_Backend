@@ -1,0 +1,131 @@
+[
+    {
+    "beschreibung": "Dein Kind/Haustier hat auf eine Taste gedrückt. Jetzt ist dein gesamter Code gelöscht und du musst auf Anfang gehen.",
+    "positionsAenderung": -10      
+  },
+    {
+    "beschreibung": "Ein netter Kollege hat den Seiten-Code schon geschrieben, du bist fertig mit dem Schreiben dieser Webseite. 10 Felder vor",
+    "positionsAenderung": 10
+  },
+    {
+    "beschreibung": "Du hast ein Komma, statt eines Semikolon gesetzt. Jetzt kannst du den Fehler nicht finden und verbringst viel Zeit mit der Fehlersuche. Drei Felder zurück.",
+    "positionsAenderung": -3
+  },
+    {
+    "beschreibung": "In einem Test wurde bei dir Corona festgestellt. Jetzt bist du in Quarantäne, und hast viel Zeit zum Code-Schreiben. Drei Felder nach vorn.",
+    "positionsAenderung": 3 
+  },
+    {
+    "beschreibung": "Dein Internet ist instabil und du kannst den Code nicht hochladen. Gehe ein Feld zurück.",
+    "positionsAenderung": -1
+  },
+    {
+    "beschreibung": "Du hast einen dringenden Abgabetermin und hast deshalb die ganze Nacht durchgearbeitet. Gehe 3 Felder nach vorn.",
+    "positionsAenderung": 3 
+  },
+    {
+    "beschreibung": "Du warst gestern auf einer Party und hast die Zeit vergessen. Heute fällt es dir schwer zu Arbeiten. Gehe 2 Felder zurück",
+    "positionsAenderung": -2
+  },
+    {
+    "beschreibung": "Du hast Kaffee über deine Konsole gekippt, jetzt musst du erst einmal Aufwischen und die Konsole trocknen. Gehe 3 Felder zurück",
+    "positionsAenderung": -3
+  },
+    {
+    "beschreibung": "Deine Familie ist total sauer, weil du 'nur noch vor dem Computer' sitzt. Um den Frieden wieder herzustellen, fährst du mit ihnen in den Kurzurlaub. Gehe 5 Felder zurück" ,
+    "positionsAenderung": -5
+  },
+    {
+    "beschreibung": "Du musst im Internet erst recherchieren, um deinen Code weiter zu schreiben. Dies kostet dich Zeit. Gehe 2 Felder zurück  ",
+    "positionsAenderung": -2 
+  },
+    {
+    "beschreibung": "Ein Kollege hat dir einen Tip gegeben, um dein Problem beim Code-Schreiben zu lösen. Das spart dir viel Zeit. Gehe 3 Felder vor",
+    "positionsAenderung": 3  
+  },
+    {
+    "beschreibung": "Dein Partner bringt dir einen Kaffee und etwas zu Essen. Dadurch kannst du ohne Pause weiterarbeiten. Gehe 2 Felder vor",
+    "positionsAenderung": 2
+  },
+    {
+    "beschreibung": "Du dringed noch etwas zu Essen kaufen. Da du sehr schnell sein musst, kannst du es als sportliche Übung berechnen. Gehe 2 Felder vor ",
+    "positionsAenderung": 2
+  },
+    {
+    "beschreibung": "Dein Computer ist defekt, jetzt brauchst du einen Neuen. Gehe 4 Felder zurück",
+    "positionsAenderung": -4
+  },
+    {
+    "beschreibung": "Das Uplode eines wichtigen Programmes zeigt Fehler an. Jetzt musst du nach dem Fehler suchen. Gehe 2 Felder zurück. ",
+    "positionsAenderung": -2 
+  },
+    {
+    "beschreibung": "Dein Kollege ist krank, jetzt musst du seine Arbeit machen. Gehe 1 Feld zurück.",
+    "positionsAenderung": -1
+  },
+    {
+    "beschreibung": "Du nutzt den falschen Code zum Hochladen und musst erst nachfragen. Gehe 2 Felder zurück",
+    "positionsAenderung": -2 
+  },
+    {
+    "beschreibung": "Du fühlst dich heute richtig gut und kommst deshalb gut vorwärts. Gehe 2 Felder",
+    "positionsAenderung": 0 
+  },
+    {
+    "beschreibung": "",
+    "positionsAenderung": 0 
+  },
+    {
+    "beschreibung": "",
+    "positionsAenderung": 0 
+ },
+
+
+    {
+    "beschreibung": "Wie zieht ein Entwickler seine Freundin aus? 'getStringFromQbject' ",
+    "positionsAenderung": 0
+ },
+    {   
+    "beschreibung": "Was sagt ein Entwickler, wenn er auf die Welt kommt? 'Hallo Welt!'",
+    "positionsAenderung": 0 
+ },
+    {
+    "beschreibung": "Wie viele Entwickler braucht man, um eine Glühbirne zu wechseln? 'Keinen, es ist ein Hardware-Problem.'",
+    "positionsAenderung": 0 
+ },
+    {
+    "beschreibung": "Was macht ein Entwickler, wenn sein Auto nicht anspringt? 'Tür auf, Tür wieder zu und nochmal versuchen.'",
+    "positionsAenderung": 0
+ },
+   {
+    "beschreibung":"Was schreit ein Entwickler in Gefahr? 'F1!' ",
+    "positionsAenderung": 0
+ },
+   {
+     "beschreibung":"Was hat Windows und ein U-Boot gemeinsam? 'Macht man ein Fenster auf, fangen die Probleme an.'",
+     "positionsAenderung": 0
+ },
+    {
+        "beschreibung": "Das müsste jetzt funktionieren.",
+        "positionsAenderung": 0
+ },
+    {
+        "beschreibung":"Der letzte Wunsch eines Entwicklers: 'Bitte ein bit.'",
+        "positionsAenderung": 0
+ },
+    {
+        "beschreibung":"Linux wird nie das meist installierte Betriebssystem sein, wenn man bedenkt, wie oft man Windows neu installieren muss.",
+        "positionsAenderung": 0
+ },
+    {
+        "beschreibung":"Warum mögen Frauen objektorientierte Programmierer?  'Weil sie Klasse haben'",
+        "positionsAenderung": 0
+    }
+
+
+  
+  
+  
+  
+  
+]
