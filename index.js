@@ -2,6 +2,9 @@ require('dotenv').config();
 
 const express = require('express');
 const mongoose = require('mongoose');
+const http = require('http');
+const WebSocketServer = require('websocket').server;
+
 const corsMiddleware = require('./middleware/corsMiddleware');
 const errorMiddleware = require('./middleware/errorMiddleware');
 
@@ -40,4 +43,18 @@ app.use('/aktionen', aktionenRouter);
 // Fehler-Middleware
 app.use(errorMiddleware);
 
-app.listen(port, () => console.log(`Server läuft. Ich lausche auf Port: ${port}`));
+// Websocket
+const server = http.createServer(app);
+const websocket = new WebSocketServer({
+  httpServer: server
+});
+
+websocket.on('request', request => {
+  const connection = request.accept(null, request.origin);
+  connection.on('close', () => console.log('Websocket Connection Closed!'));
+  connection.on('message', message => {
+    console.log(`Nachricht bekommen ${message.utf8Data}`);
+  })
+});
+
+server.listen(port, () => console.log(`Server läuft. Ich lausche auf Port: ${port}`));
