@@ -49,12 +49,40 @@ const websocket = new WebSocketServer({
   httpServer: server
 });
 
+const clients = {};
+const spiele = {};
+
+const getUniqueID = () => {
+  const s4 = () => Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
+  return s4() + s4() + '-' + s4();
+};
+
 websocket.on('request', request => {
   const connection = request.accept(null, request.origin);
   connection.on('close', () => console.log('Websocket Connection Closed!'));
   connection.on('message', message => {
-    console.log(`Nachricht bekommen ${message.utf8Data}`);
-  })
+    const result = JSON.parse(message.utf8Data);
+    console.log(`Nachricht bekommen ${result}`);
+  });
+
+
+
+
+  // generiert eine neue clientId
+  const clientId = getUniqueID();
+
+  clients[clientId] = {
+    connection
+  };
+
+  //send back the client connect
+  const payload = {
+    method: 'connect',
+    clientId
+  };
+
+  connection.send(JSON.stringify(payload));
+
 });
 
 server.listen(port, () => console.log(`Server läuft. Ich lausche auf Port: ${port}`));
