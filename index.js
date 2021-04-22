@@ -49,6 +49,7 @@ const websocket = new WebSocketServer({
   httpServer: server
 });
 
+// hashmaps
 const clients = {};
 const spiele = {};
 
@@ -63,6 +64,24 @@ websocket.on('request', request => {
   connection.on('message', message => {
     const result = JSON.parse(message.utf8Data);
     console.log(`Nachricht bekommen ${result}`);
+
+    // Ein Nutzer möchte ein neues Spiel erstellen
+    if (result.method === 'create') {
+      const clientId = result.clientId;
+      const spielId = getUniqueID();
+      spiele[spielId] = {
+        id: spielId,
+        clients: []
+      };
+
+      const payload = {
+        method: 'create',
+        spiel: spiele[spielId]
+      };
+
+      const con = clients[clientId].connection;
+      con.send(JSON.stringify(payload));
+    }
   });
 
 
