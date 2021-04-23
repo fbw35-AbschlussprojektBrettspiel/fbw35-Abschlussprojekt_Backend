@@ -82,6 +82,33 @@ websocket.on('request', request => {
       const con = clients[clientId].connection;
       con.send(JSON.stringify(payload));
     }
+
+    // Ein Nutzer möchte ein Spiel beitreten
+    if (result.method === 'join') {
+      const clientId = result.clientId;
+      const spielId = result.spielId;
+      const spiel = spiele[spielId];
+      // maximale Spieler erst mal auf 2 gesetzt
+      if (spiel.clients.length >= 2) {
+        return; // später soll Antworten usw. geschrieben werden
+      }
+      const order = spiel.clients.length;
+      spiel.clients.push({
+        clientId,
+        order
+      });
+
+      const payload = {
+        method: 'join',
+        spiel
+      };
+
+      // loope durch alle Spieler und sage ihnen, dass jemand dem Spiel beigetreten ist
+      spiel.clients.forEach(client => {
+        clients[client.clientId].connection.send(JSON.stringify(payload));
+      })
+    }
+
   });
 
 
@@ -93,6 +120,8 @@ websocket.on('request', request => {
   clients[clientId] = {
     connection
   };
+
+  console.log(Object.keys(clients));
 
   //send back the client connect
   const payload = {
