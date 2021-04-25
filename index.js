@@ -79,7 +79,8 @@ websocket.on('request', request => {
       spiele[spielId] = {
         id: spielId,
         clients: [],
-        spielfeldArray
+        spielfeldArray,
+        fragen: []
       };
 
       const payload = {
@@ -163,12 +164,24 @@ websocket.on('request', request => {
     if (result.method === 'macheZug') {
       const clientId = result.clientId;
       const spielId = result.spielId;
-      const spiel = spiele[spielId];
       const neuePosition = result.neuePosition;
+      const spiel = spiele[spielId];
+      const fragen = spiel.fragen;
+      const spielfeldArray = spiel.spielfeldArray;
+      // Thema anhand der Spielfigurposition ermitteln
+      const thema = spielfeldArray[neuePosition];
+      // falls aktion...
+      if (thema === 'aktion') {
+        return;
+      }
+
+      const fragenEinesThemas = fragen.filter(element => element.thema === thema);
+      const frage = fragenEinesThemas[Math.floor(Math.random() * fragenEinesThemas.length)];
 
       const payload = {
         method: 'macheZug',
-        neuePosition
+        neuePosition,
+        frage
       };
 
       spiel.clients.forEach(client => {
