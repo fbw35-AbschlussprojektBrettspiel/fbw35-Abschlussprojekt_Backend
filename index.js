@@ -142,6 +142,23 @@ websocket.on('request', request => {
       });
     }
 
+    // Ein Nutzer möchte einen Zug machen
+    if (result.method === 'macheZug') {
+      const clientId = result.clientId;
+      const spielId = result.spielId;
+      const spiel = spiele[spielId];
+      const neuePosition = result.neuePosition;
+
+      const payload = {
+        method: 'macheZug',
+        neuePosition
+      };
+
+      spiel.clients.forEach(client => {
+        clients[client.clientId].connection.send(JSON.stringify(payload));
+      });
+    };
+
   });
 
 
