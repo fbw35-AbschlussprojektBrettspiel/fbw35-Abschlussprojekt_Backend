@@ -109,6 +109,22 @@ websocket.on('request', request => {
       })
     }
 
+    // Ein Nutzer möchte ein Spiel starten
+    if (result.method === 'start') {
+      const clientId = result.clientId;
+      const spielId = result.spielId;
+      const spiel = spiele[spielId];
+      // evtl. hier eine Prüfung hinzufügen, ob der Nutzer dem Spiel beigetreten ist
+      
+      const payload = {
+        method: 'start'
+      };
+
+      spiel.clients.forEach(client => {
+        clients[client.clientId].connection.send(JSON.stringify(payload));
+      })
+    }
+
   });
 
 
