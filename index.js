@@ -8,6 +8,8 @@ const WebSocketServer = require('websocket').server;
 const corsMiddleware = require('./middleware/corsMiddleware');
 const errorMiddleware = require('./middleware/errorMiddleware');
 
+const Frage = require('./models/frage-model');
+
 // Routes importieren
 const fragenRouter = require('./routes/fragen');
 const aktionenRouter = require('./routes/aktionen');
@@ -116,13 +118,21 @@ websocket.on('request', request => {
       const spiel = spiele[spielId];
       // evtl. hier eine Prüfung hinzufügen, ob der Nutzer dem Spiel beigetreten ist
       
-      const payload = {
-        method: 'start'
-      };
+      // Fragen werden beim Start eines Spiels aus DB geholt und im spiel-Objekt gespeichert,
+      // aber nicht an clients geschickt
+      Frage.find().lean()
+      .then(result => {
+        spiel.fragen = result;
+        
+        const payload = {
+          method: 'start'
+        };
 
-      spiel.clients.forEach(client => {
-        clients[client.clientId].connection.send(JSON.stringify(payload));
-      });
+        spiel.clients.forEach(client => {
+          clients[client.clientId].connection.send(JSON.stringify(payload));
+        });
+      })
+      .catch(err => console.log(err))
     }
 
     // Ein Nutzer möchte würfeln
