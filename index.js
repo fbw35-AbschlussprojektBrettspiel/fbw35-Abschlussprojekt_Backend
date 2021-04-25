@@ -71,9 +71,15 @@ websocket.on('request', request => {
     if (result.method === 'create') {
       const clientId = result.clientId;
       const spielId = getUniqueID();
+      // Spielfeld-Array. Die Elemente repräsentieren die Feldtypen
+      const spielfeldArray = Array(60).fill(null).map((element, index) => index % 4 === 0 ? 'html' :
+        index % 4 === 1 ? 'css' :
+        index % 4 === 2 ? 'javascript' :
+        'aktion');
       spiele[spielId] = {
         id: spielId,
-        clients: []
+        clients: [],
+        spielfeldArray
       };
 
       const payload = {
@@ -125,7 +131,8 @@ websocket.on('request', request => {
         spiel.fragen = result;
         
         const payload = {
-          method: 'start'
+          method: 'start',
+          spielfeldArray: spiel.spielfeldArray
         };
 
         spiel.clients.forEach(client => {
