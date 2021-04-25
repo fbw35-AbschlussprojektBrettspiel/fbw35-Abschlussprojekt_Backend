@@ -122,7 +122,24 @@ websocket.on('request', request => {
 
       spiel.clients.forEach(client => {
         clients[client.clientId].connection.send(JSON.stringify(payload));
-      })
+      });
+    }
+
+    // Ein Nutzer möchte würfeln
+    if (result.method === 'wuerfeln') {
+      const clientId = result.clientId;
+      const spielId = result.spielId;
+      const spiel = spiele[spielId];
+      const gewuerfelteZahl = Math.floor((Math.random() * 6) + 1);
+
+      const payload = {
+        method: 'wuerfeln',
+        gewuerfelteZahl
+      };
+
+      spiel.clients.forEach(client => {
+        clients[client.clientId].connection.send(JSON.stringify(payload));
+      });
     }
 
   });
