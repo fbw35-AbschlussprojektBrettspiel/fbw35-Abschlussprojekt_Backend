@@ -83,7 +83,8 @@ websocket.on('request', request => {
         id: spielId,
         clients: [],
         spielfeldArray,
-        fragen: []
+        fragen: [],
+        werIstDran: 0
       };
 
       const payload = {
@@ -126,6 +127,8 @@ websocket.on('request', request => {
       const clientId = result.clientId;
       const spielId = result.spielId;
       const spiel = spiele[spielId];
+      const initialPositionen = {};
+      spiel.clients.forEach(client => initialPositionen[client.order] = 0);
       // evtl. hier eine Prüfung hinzufügen, ob der Nutzer dem Spiel beigetreten ist
 
       // Fragen werden beim Start eines Spiels aus DB geholt und im spiel-Objekt gespeichert,
@@ -136,7 +139,8 @@ websocket.on('request', request => {
 
           const payload = {
             method: 'start',
-            spielfeldArray: spiel.spielfeldArray
+            spielfeldArray: spiel.spielfeldArray,
+            initialPositionen
           };
 
           spiel.clients.forEach(client => {
@@ -171,6 +175,7 @@ websocket.on('request', request => {
       let neuePosition = result.neuePosition;
       const spiel = spiele[spielId];
       const fragen = spiel.fragen;
+      const werIstDran = spiel.werIstDran;
       const spielfeldArray = spiel.spielfeldArray;
 
       let payload = {};
@@ -179,6 +184,7 @@ websocket.on('request', request => {
         payload = {
           method: 'macheZug',
           neuePosition,
+          werIstDran,
           ende: true
         }
       } else {
@@ -191,6 +197,7 @@ websocket.on('request', request => {
         payload = {
           method: 'macheZug',
           neuePosition,
+          werIstDran,
           frage
         };
       }
@@ -206,10 +213,12 @@ websocket.on('request', request => {
       const spielId = result.spielId;
       const neuePosition = result.neuePosition;
       const spiel = spiele[spielId];
+      const werIstDran = spiel.werIstDran;
 
       const payload = {
         method: 'verschieben',
-        neuePosition
+        neuePosition,
+        werIstDran
       };
 
       spiel.clients.forEach(client => {
@@ -222,9 +231,11 @@ websocket.on('request', request => {
       const clientId = result.clientId;
       const spielId = result.spielId;
       const spiel = spiele[spielId];
+      spiel.werIstDran = spiel.werIstDran + 1 < spiel.clients.length ? spiel.werIstDran + 1 : 0;
 
       const payload = {
-        method: 'naechsterZug'
+        method: 'naechsterZug',
+        werIstDran: spiel.werIstDran
       };
 
       spiel.clients.forEach(client => {
