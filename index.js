@@ -72,10 +72,13 @@ websocket.on('request', request => {
       const clientId = result.clientId;
       const spielId = getUniqueID();
       // Spielfeld-Array. Die Elemente repräsentieren die Feldtypen
-      const spielfeldArray = Array(60).fill(null).map((element, index) => index % 4 === 0 ? 'html' :
-        index % 4 === 1 ? 'css' :
-        index % 4 === 2 ? 'javascript' :
-        'aktion');
+      // const spielfeldArray = Array(60).fill(null).map((element, index) => index % 4 === 0 ? 'html' :
+      //   index % 4 === 1 ? 'css' :
+      //   index % 4 === 2 ? 'javascript' :
+      //   'aktion');
+      const spielfeldArray = Array(60).fill(null).map((element, index) => index % 3 === 0 ? 'html' :
+        index % 3 === 1 ? 'css' :
+        'javascript');
       spiele[spielId] = {
         id: spielId,
         clients: [],
@@ -199,6 +202,21 @@ websocket.on('request', request => {
       const payload = {
         method: 'verschieben',
         neuePosition
+      };
+
+      spiel.clients.forEach(client => {
+        clients[client.clientId].connection.send(JSON.stringify(payload));
+      });
+    }
+
+    // Nächster Zug soll ausgeführt werden
+    if (result.method === 'naechsterZug') {
+      const clientId = result.clientId;
+      const spielId = result.spielId;
+      const spiel = spiele[spielId];
+      
+      const payload = {
+        method: 'naechsterZug'
       };
 
       spiel.clients.forEach(client => {
