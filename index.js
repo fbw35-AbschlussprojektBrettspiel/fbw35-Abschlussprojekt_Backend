@@ -189,6 +189,23 @@ websocket.on('request', request => {
       });
     };
 
+    // Ein Nutzer möchte die Spielfigur verschieben
+    if (result.method === 'verschieben') {
+      const cliendId = result.clientId;
+      const spielId = result.spielId;
+      const neuePosition = result.neuePosition;
+      const spiel = spiele[spielId];
+
+      const payload = {
+        method: 'verschieben',
+        neuePosition
+      };
+
+      spiel.clients.forEach(client => {
+        clients[client.clientId].connection.send(JSON.stringify(payload));
+      });
+    }
+
   });
 
 
