@@ -78,7 +78,7 @@ websocket.on('request', request => {
       //   'aktion');
       const spielfeldArray = Array(60).fill(null).map((element, index) => index % 3 === 0 ? 'html' :
         index % 3 === 1 ? 'css' :
-        'javascript');
+          'javascript');
       spiele[spielId] = {
         id: spielId,
         clients: [],
@@ -127,23 +127,23 @@ websocket.on('request', request => {
       const spielId = result.spielId;
       const spiel = spiele[spielId];
       // evtl. hier eine Prüfung hinzufügen, ob der Nutzer dem Spiel beigetreten ist
-      
+
       // Fragen werden beim Start eines Spiels aus DB geholt und im spiel-Objekt gespeichert,
       // aber nicht an clients geschickt
       Frage.find().lean()
-      .then(result => {
-        spiel.fragen = result;
-        
-        const payload = {
-          method: 'start',
-          spielfeldArray: spiel.spielfeldArray
-        };
+        .then(result => {
+          spiel.fragen = result;
 
-        spiel.clients.forEach(client => {
-          clients[client.clientId].connection.send(JSON.stringify(payload));
-        });
-      })
-      .catch(err => console.log(err))
+          const payload = {
+            method: 'start',
+            spielfeldArray: spiel.spielfeldArray
+          };
+
+          spiel.clients.forEach(client => {
+            clients[client.clientId].connection.send(JSON.stringify(payload));
+          });
+        })
+        .catch(err => console.log(err))
     }
 
     // Ein Nutzer möchte würfeln
@@ -151,7 +151,8 @@ websocket.on('request', request => {
       const clientId = result.clientId;
       const spielId = result.spielId;
       const spiel = spiele[spielId];
-      const gewuerfelteZahl = Math.floor((Math.random() * 6) + 1);
+      // const gewuerfelteZahl = Math.floor((Math.random() * 6) + 1);
+      const gewuerfelteZahl = Math.floor((Math.random() * 60) + 1); // testen
 
       const payload = {
         method: 'wuerfeln',
@@ -167,25 +168,32 @@ websocket.on('request', request => {
     if (result.method === 'macheZug') {
       const clientId = result.clientId;
       const spielId = result.spielId;
-      const neuePosition = result.neuePosition;
+      let neuePosition = result.neuePosition;
       const spiel = spiele[spielId];
       const fragen = spiel.fragen;
       const spielfeldArray = spiel.spielfeldArray;
-      // Thema anhand der Spielfigurposition ermitteln
-      const thema = spielfeldArray[neuePosition];
-      // falls aktion...
-      if (thema === 'aktion') {
-        return;
+
+      let payload = {};
+      if (neuePosition >= spielfeldArray.length) {
+        neuePosition = neuePosition % spielfeldArray.length;
+        payload = {
+          method: 'macheZug',
+          neuePosition,
+          ende: true
+        }
+      } else {
+        // Thema anhand der Spielfigurposition ermitteln
+        const thema = spielfeldArray[neuePosition];
+
+        const fragenEinesThemas = fragen.filter(element => element.thema === thema);
+        const frage = fragenEinesThemas[Math.floor(Math.random() * fragenEinesThemas.length)];
+
+        payload = {
+          method: 'macheZug',
+          neuePosition,
+          frage
+        };
       }
-
-      const fragenEinesThemas = fragen.filter(element => element.thema === thema);
-      const frage = fragenEinesThemas[Math.floor(Math.random() * fragenEinesThemas.length)];
-
-      const payload = {
-        method: 'macheZug',
-        neuePosition,
-        frage
-      };
 
       spiel.clients.forEach(client => {
         clients[client.clientId].connection.send(JSON.stringify(payload));
@@ -214,9 +222,24 @@ websocket.on('request', request => {
       const clientId = result.clientId;
       const spielId = result.spielId;
       const spiel = spiele[spielId];
-      
+
       const payload = {
         method: 'naechsterZug'
+      };
+
+      spiel.clients.forEach(client => {
+        clients[client.clientId].connection.send(JSON.stringify(payload));
+      });
+    }
+
+    // Das Spiel soll beendet werden
+    if (result.method === 'beenden') {
+      const clientId = result.clientId;
+      const spielId = result.spielId;
+      const spiel = spiele[spielId];
+
+      const payload = {
+        method: 'beenden'
       };
 
       spiel.clients.forEach(client => {
