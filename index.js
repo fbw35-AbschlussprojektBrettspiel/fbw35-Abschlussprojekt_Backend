@@ -130,11 +130,16 @@ websocket.on('request', request => {
       spiel.clients.forEach(client => initialPositionen[client.order] = 0);
       // evtl. hier eine Prüfung hinzufügen, ob der Nutzer dem Spiel beigetreten ist
 
-      // Fragen werden beim Start eines Spiels aus DB geholt und im spiel-Objekt gespeichert,
+      // Fragen und Aktionen werden beim Start eines Spiels aus DB geholt und im spiel-Objekt gespeichert,
       // aber nicht an clients geschickt
       Frage.find().lean()
         .then(result => {
           spiel.fragen = result;
+          return Aktion.find().lean();
+        })
+        .then(result => {
+          spiel.aktionen = result;
+          console.log('ist alles drin?', spiel);
 
           const payload = {
             method: 'start',
@@ -146,7 +151,7 @@ websocket.on('request', request => {
             clients[client.clientId].connection.send(JSON.stringify(payload));
           });
         })
-        .catch(err => console.log(err))
+        .catch(err => console.log(err));
     }
 
     // Ein Nutzer möchte würfeln
