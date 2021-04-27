@@ -9,6 +9,7 @@ const corsMiddleware = require('./middleware/corsMiddleware');
 const errorMiddleware = require('./middleware/errorMiddleware');
 
 const Frage = require('./models/frage-model');
+const Aktion = require('./models/aktion-model');
 
 // Routes importieren
 const fragenRouter = require('./routes/fragen');
@@ -72,18 +73,16 @@ websocket.on('request', request => {
       const clientId = result.clientId;
       const spielId = getUniqueID();
       // Spielfeld-Array. Die Elemente repräsentieren die Feldtypen
-      // const spielfeldArray = Array(60).fill(null).map((element, index) => index % 4 === 0 ? 'html' :
-      //   index % 4 === 1 ? 'css' :
-      //   index % 4 === 2 ? 'javascript' :
-      //   'aktion');
-      const spielfeldArray = Array(60).fill(null).map((element, index) => index % 3 === 0 ? 'html' :
-        index % 3 === 1 ? 'css' :
-          'javascript');
+      const spielfeldArray = Array(60).fill(null).map((element, index) => index % 4 === 0 ? 'html' :
+        index % 4 === 1 ? 'css' :
+        index % 4 === 2 ? 'javascript' :
+        'aktion');
       spiele[spielId] = {
         id: spielId,
         clients: [],
         spielfeldArray,
         fragen: [],
+        aktionen: [],
         werIstDran: 0
       };
 
