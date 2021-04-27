@@ -75,8 +75,8 @@ websocket.on('request', request => {
       // Spielfeld-Array. Die Elemente repräsentieren die Feldtypen
       const spielfeldArray = Array(60).fill(null).map((element, index) => index % 4 === 0 ? 'html' :
         index % 4 === 1 ? 'css' :
-        index % 4 === 2 ? 'javascript' :
-        'aktion');
+          index % 4 === 2 ? 'javascript' :
+            'aktion');
       spiele[spielId] = {
         id: spielId,
         clients: [],
@@ -159,8 +159,7 @@ websocket.on('request', request => {
       const clientId = result.clientId;
       const spielId = result.spielId;
       const spiel = spiele[spielId];
-      // const gewuerfelteZahl = Math.floor((Math.random() * 6) + 1);
-      const gewuerfelteZahl = Math.floor((Math.random() * 60) + 1); // testen
+      const gewuerfelteZahl = Math.floor((Math.random() * 6) + 1);
 
       const payload = {
         method: 'wuerfeln',
@@ -178,7 +177,6 @@ websocket.on('request', request => {
       const spielId = result.spielId;
       let neuePosition = result.neuePosition;
       const spiel = spiele[spielId];
-      const fragen = spiel.fragen;
       const werIstDran = spiel.werIstDran;
       const spielfeldArray = spiel.spielfeldArray;
 
@@ -195,15 +193,26 @@ websocket.on('request', request => {
         // Thema anhand der Spielfigurposition ermitteln
         const thema = spielfeldArray[neuePosition];
 
-        const fragenEinesThemas = fragen.filter(element => element.thema === thema);
-        const frage = fragenEinesThemas[Math.floor(Math.random() * fragenEinesThemas.length)];
-
-        payload = {
-          method: 'macheZug',
-          neuePosition,
-          werIstDran,
-          frage
-        };
+        if (thema === 'aktion') {
+          const aktionen = spiel.aktionen;
+          const aktion = aktionen[Math.floor(Math.random() * aktionen.length)];
+          payload = {
+            method: 'macheZug',
+            neuePosition,
+            werIstDran,
+            aktion
+          };
+        } else {
+          const fragen = spiel.fragen;
+          const fragenEinesThemas = fragen.filter(element => element.thema === thema);
+          const frage = fragenEinesThemas[Math.floor(Math.random() * fragenEinesThemas.length)];
+          payload = {
+            method: 'macheZug',
+            neuePosition,
+            werIstDran,
+            frage
+          };
+        }
       }
 
       spiel.clients.forEach(client => {
