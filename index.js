@@ -63,10 +63,14 @@ const getUniqueID = () => {
 
 websocket.on('request', request => {
   const connection = request.accept(null, request.origin);
-  connection.on('close', () => console.log('Websocket Connection Closed!'));
+  connection.on('close', () => {
+    console.log(`Websocket Connection from ID ${clientId} Closed!`);
+    // dieser client wird aus der clients-Liste entfernt
+    delete clients[clientId];
+  });
   connection.on('message', message => {
     const result = JSON.parse(message.utf8Data);
-    console.log(`Nachricht bekommen ${result}`);
+    console.log(`Nachricht bekommen ${result.method}`);
 
     // Ein Nutzer möchte ein neues Spiel erstellen
     if (result.method === 'create') {
@@ -139,7 +143,6 @@ websocket.on('request', request => {
         })
         .then(result => {
           spiel.aktionen = result;
-          console.log('ist alles drin?', spiel);
 
           const payload = {
             method: 'start',
@@ -261,6 +264,8 @@ websocket.on('request', request => {
       const clientId = result.clientId;
       const spielId = result.spielId;
       const spiel = spiele[spielId];
+      // dieses Spiel wird aus der spiele-Liste entfernt
+      delete spiele[spielId];
 
       const payload = {
         method: 'beenden'
