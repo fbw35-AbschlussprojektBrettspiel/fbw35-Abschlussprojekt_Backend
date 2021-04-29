@@ -53,20 +53,14 @@ pusht die Aktionen aus der json-Datei, die im Ordner public liegen soll, auf die
 
 # Software und Freamworks:
 
-> * npm-Packete (mongoose,mongodb,dotenv)
-> * Websocketund
-> * testing-library
+> * npm-Packete (express, mongoose,dotenv,Websocket)
+
 
 # Autoren
 * Anton Tun Huang
 * Christoph Bochniak
 * Sebastian Opaska 
 * Corinna Hellmund
-
-
-# Links
-* [source code](https://github.com/fbw35-AbschlussprojektBrettspiel/fbw35-Abschlussprojekt_Backend)
-
 
 
 # Beitrag
