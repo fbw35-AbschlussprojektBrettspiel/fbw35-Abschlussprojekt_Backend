@@ -57,7 +57,6 @@ pusht die Aktionen aus der json-Datei, die im Ordner public liegen soll, auf die
 
 
 # Autoren
-# Autoren
 * [Anton Tun Huang](https://github.com/TunHuang)
 * [Christoph Bochniak](https://github.com/Christoph86)
 * [Sebastian Opaska](https://github.com/sopaska)
