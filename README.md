@@ -13,7 +13,7 @@
 
   **Diese Anweisungen ermöglichen es Ihnen, eine Kopie des Projekts auf Ihrem lokalen Computer zu Entwicklungs- und Testzwecken zu erstellen.**
 
-# Start
+# Installation
 
 Du hast 2 Möglichkeiten dieses Spiel zu spielen: Online oder lokal.
 
@@ -61,12 +61,6 @@ pusht die Aktionen aus der json-Datei, die im Ordner public liegen soll, auf die
 * [Christoph Bochniak](https://github.com/Christoph86)
 * [Sebastian Opaska](https://github.com/sopaska)
 * [Corinna Hellmund](https://github.com/CoraHell)
-
-# Beitrag
-
-1. Repo klonen und einen neuen Branch erstellen:: `$ git checkout https://github.com/fbw35-AbschlussprojektBrettspiel/fbw35-Abschlussprojekt_Backend -b name_for_new_branch`.
-2. Änderungen vornehmen und testen
-
 
 
 
