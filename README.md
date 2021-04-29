@@ -53,21 +53,20 @@ pusht die Aktionen aus der json-Datei, die im Ordner public liegen soll, auf die
 
 # Software und Freamworks:
 
-> * npm-Packete (express, mongoose,dotenv,Websocket)
+> * npm-Packete (express,mongoose,dotenv,Websocket)
 
 
 # Autoren
-* Anton Tun Huang
-* Christoph Bochniak
-* Sebastian Opaska 
-* Corinna Hellmund
-
+# Autoren
+* [Anton Tun Huang](https://github.com/TunHuang)
+* [Christoph Bochniak](https://github.com/Christoph86)
+* [Sebastian Opaska](https://github.com/sopaska)
+* [Corinna Hellmund](https://github.com/CoraHell)
 
 # Beitrag
 
 1. Repo klonen und einen neuen Branch erstellen:: `$ git checkout https://github.com/fbw35-AbschlussprojektBrettspiel/fbw35-Abschlussprojekt_Backend -b name_for_new_branch`.
 2. Änderungen vornehmen und testen
-3. Pull Request mit ausführlicher Beschreibung der Änderungen einreichen.
 
 
 
