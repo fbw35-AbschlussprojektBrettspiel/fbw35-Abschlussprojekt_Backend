@@ -1,12 +1,36 @@
-# fbw35-Abschlussprojekt_Backend
+# DAS BRETTSPIEL - Das Online-Spiel
+![logo](img/../public/img/LogoSpiel.png)
 
-## loslegen!
 
-npm install
+![build succeeded](https://img.shields.io/badge/build-succeeded-brightgreen.svg)
 
-## .env
+  **Wie weit reichen deine Dev-Web? Hier ist eine tolle Möglichkeit, dies herauszufinden! 
+  Mit diesem Brettspiel kannst du ganz einfach dein Wissen testen und deine IT-Fähigkeiten üben. Zusätzlich bietet unsere Anwendung die Möglichkeit, online mit einer anderen Person zu spielen.**
 
-.env im Rootverzeichnis anlegen
+![screen](img/../public/img/ScreenSpiel.png)
+
+# Beginn der Arbeiten
+
+  **Diese Anweisungen ermöglichen es Ihnen, eine Kopie des Projekts auf Ihrem lokalen Computer zu Entwicklungs- und Testzwecken zu erstellen.**
+
+# Start
+
+Du hast 2 Möglichkeiten dieses Spiel zu spielen: Online oder lokal.
+
+Als Beispiel zum Anschauen nutzt Du bitte: https://webdev-brettspiel-frontend.herokuapp.com/
+
+Für das lokale Spiel:
+
+1.  musst Du Frontend und Backend runter laden. 
+2.  Nach npm instalation beide Dateien müssen offen sein!!!
+
+Hier findest Du link zum unserer [Frontend](https://github.com/fbw35-AbschlussprojektBrettspiel/fbw35-Abschlussprojekt_Frontend/tree/main/src)
+
+
+### `npm install`
+
+
+Must Du eine .env Datei im Rootverzeichnis anlegen:
 
 ### `npm start`
 
@@ -24,3 +48,35 @@ pusht die Fragen aus der json-Datei, die im Ordner public liegen soll, auf die D
 ### `npm run pushAktionen datei.json`
 
 pusht die Aktionen aus der json-Datei, die im Ordner public liegen soll, auf die Datenbank
+
+
+
+# Software und Freamworks:
+
+> * npm-Packete (mongoose,mongodb,dotenv)
+> * Websocketund
+> * testing-library
+
+# Autoren
+* Anton Tun Huang
+* Christoph Bochniak
+* Sebastian Opaska 
+* Corinna Hellmund
+
+
+# Links
+* [source code](https://github.com/fbw35-AbschlussprojektBrettspiel/fbw35-Abschlussprojekt_Backend)
+
+
+
+# Beitrag
+
+1. Repo klonen und einen neuen Branch erstellen:: `$ git checkout https://github.com/fbw35-AbschlussprojektBrettspiel/fbw35-Abschlussprojekt_Backend -b name_for_new_branch`.
+2. Änderungen vornehmen und testen
+3. Pull Request mit ausführlicher Beschreibung der Änderungen einreichen.
+
+
+
+
+
+
