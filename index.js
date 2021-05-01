@@ -118,6 +118,17 @@ websocket.on('request', request => {
         };
 
         clients[clientId].connection.send(JSON.stringify(payload));
+        
+        // falls sich ein Spieler mehrmals (mit derselben clientId) einem Spiel beitreten möchte
+      } else if (spiel.clients.find(client => client.clientId === clientId)) {
+        const mitteilung = `Du bist bereits dem Spiel mit der ID ${spielId} beigetreten, du kannst dem nicht noch einmal beitreten.`;
+
+        const payload = {
+          method: 'startseiteWarnung',
+          mitteilung
+        };
+
+        clients[clientId].connection.send(JSON.stringify(payload));
       } else {
         const order = spiel.clients.length;
         const mitteilung = `Du bist erfolgreich mit dem Spielernamen ${spielerName} dem Spiel mit der ID ${spielId} beigetreten.`;
