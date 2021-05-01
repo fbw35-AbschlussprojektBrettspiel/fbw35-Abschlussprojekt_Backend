@@ -104,8 +104,8 @@ websocket.on('request', request => {
       const clientId = result.clientId;
       const spielId = result.spielId;
       const spiel = spiele[spielId];
-      // maximale Spieler erst mal auf 2 gesetzt
-      if (spiel.clients.length >= 2) {
+      // maximale Spieler auf 4 gesetzt
+      if (spiel.clients.length >= 4) {
         return; // später soll Antworten usw. geschrieben werden
       }
       const order = spiel.clients.length;
