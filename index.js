@@ -107,28 +107,37 @@ websocket.on('request', request => {
       const spielId = result.spielId;
       const spielerName = result.spielerName;
       const spiel = spiele[spielId];
+
       // maximale Spieler auf 4 gesetzt
       if (spiel.clients.length >= 4) {
-        return; // später soll Antworten usw. geschrieben werden
+        const mitteilung = `Das Spiel mit der ID ${spielId} hat leider bereits die maximale Teilnehmerzahl von Vier. Du kannst dem nicht mehr beitreten.`;
+
+        const payload = {
+          method: 'startseiteWarnung',
+          mitteilung
+        };
+
+        clients[clientId].connection.send(JSON.stringify(payload));
+      } else {
+        const order = spiel.clients.length;
+        const mitteilung = `Du bist erfolgreich mit dem Spielernamen ${spielerName} dem Spiel mit der ID ${spielId} beigetreten.`;
+        spiel.clients.push({
+          clientId,
+          order,
+          spielerName,
+        });
+
+        const payload = {
+          method: 'join',
+          spiel,
+          mitteilung
+        };
+
+        // loope durch alle Spieler und sage ihnen, dass jemand dem Spiel beigetreten ist
+        spiel.clients.forEach(client => {
+          clients[client.clientId].connection.send(JSON.stringify(payload));
+        });
       }
-      const order = spiel.clients.length;
-      const mitteilung = `Du bist erfolgreich mit dem Spielernamen ${spielerName} dem Spiel mit der ID ${spielId} beigetreten.`;
-      spiel.clients.push({
-        clientId,
-        order,
-        spielerName,
-      });
-
-      const payload = {
-        method: 'join',
-        spiel,
-        mitteilung
-      };
-
-      // loope durch alle Spieler und sage ihnen, dass jemand dem Spiel beigetreten ist
-      spiel.clients.forEach(client => {
-        clients[client.clientId].connection.send(JSON.stringify(payload));
-      })
     }
 
     // Ein Nutzer möchte ein Spiel starten
