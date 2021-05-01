@@ -89,10 +89,12 @@ websocket.on('request', request => {
         aktionen: [],
         werIstDran: 0
       };
+      const mitteilung = `Ein Spiel mit der ID ${spielId} erfolgreich hergestellt. Du kannst die ID an deine Mitspieler weitergeben.`;
 
       const payload = {
         method: 'create',
-        spiel: spiele[spielId]
+        spiel: spiele[spielId],
+        mitteilung
       };
 
       const con = clients[clientId].connection;
@@ -110,15 +112,17 @@ websocket.on('request', request => {
         return; // später soll Antworten usw. geschrieben werden
       }
       const order = spiel.clients.length;
+      const mitteilung = `Du bist erfolgreich mit dem Spielernamen ${spielerName} dem Spiel mit der ID ${spielId} beigetreten.`;
       spiel.clients.push({
         clientId,
         order,
-        spielerName
+        spielerName,
       });
 
       const payload = {
         method: 'join',
-        spiel
+        spiel,
+        mitteilung
       };
 
       // loope durch alle Spieler und sage ihnen, dass jemand dem Spiel beigetreten ist
@@ -282,7 +286,7 @@ websocket.on('request', request => {
 
 
 
-
+  // request; ein Nutzer stellt die Verbindung zum Websocket-Server her
   // generiert eine neue clientId
   const clientId = getUniqueID();
 
@@ -292,10 +296,13 @@ websocket.on('request', request => {
 
   console.log(Object.keys(clients));
 
+  const mitteilung = 'Verbindung zum Spielserver erfolgreich hergestellt.';
+
   //send back the client connect
   const payload = {
     method: 'connect',
-    clientId
+    clientId,
+    mitteilung
   };
 
   connection.send(JSON.stringify(payload));
