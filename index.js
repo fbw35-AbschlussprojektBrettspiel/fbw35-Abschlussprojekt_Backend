@@ -103,6 +103,7 @@ websocket.on('request', request => {
     if (result.method === 'join') {
       const clientId = result.clientId;
       const spielId = result.spielId;
+      const spielerName = result.spielerName;
       const spiel = spiele[spielId];
       // maximale Spieler auf 4 gesetzt
       if (spiel.clients.length >= 4) {
@@ -111,7 +112,8 @@ websocket.on('request', request => {
       const order = spiel.clients.length;
       spiel.clients.push({
         clientId,
-        order
+        order,
+        spielerName
       });
 
       const payload = {
