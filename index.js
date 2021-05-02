@@ -89,7 +89,7 @@ websocket.on('request', request => {
         aktionen: [],
         werIstDran: 0
       };
-      const mitteilung = `Ein Spiel mit der ID ${spielId} erfolgreich hergestellt. Du kannst die ID an deine Mitspieler weitergeben.`;
+      const mitteilung = `Ein Spiel mit der ID ${spielId} erfolgreich hergestellt. Du kannst jetzt dem Spiel beitreten und die ID an deine Mitspieler weitergeben.`;
 
       const payload = {
         method: 'create',
@@ -106,22 +106,10 @@ websocket.on('request', request => {
       const clientId = result.clientId;
       const spielId = result.spielId;
       const spielerName = result.spielerName;
-      const spiel = spiele[spielId];
 
-      // maximale Spieler auf 4 gesetzt
-      if (spiel.clients.length >= 4) {
-        const mitteilung = `Das Spiel mit der ID ${spielId} hat leider bereits die maximale Teilnehmerzahl von Vier. Du kannst dem nicht mehr beitreten.`;
-
-        const payload = {
-          method: 'startseiteWarnung',
-          mitteilung
-        };
-
-        clients[clientId].connection.send(JSON.stringify(payload));
-
-        // falls sich ein Spieler mehrmals (mit derselben clientId) einem Spiel beitreten möchte
-      } else if (spiel.clients.find(client => client.clientId === clientId)) {
-        const mitteilung = `Du bist bereits dem Spiel mit der ID ${spielId} beigetreten, du kannst dem nicht noch einmal beitreten.`;
+      // Wenn keine spielId angegeben wurde
+      if (!spielId) {
+        const mitteilung = 'Keine Spiel-ID vorhanden. Bitte gib eine an, bevor du dem Spiel beitrittst.';
 
         const payload = {
           method: 'startseiteWarnung',
@@ -130,24 +118,49 @@ websocket.on('request', request => {
 
         clients[clientId].connection.send(JSON.stringify(payload));
       } else {
-        const order = spiel.clients.length;
-        const mitteilung = `Du bist erfolgreich mit dem Spielernamen ${spielerName} dem Spiel mit der ID ${spielId} beigetreten.`;
-        spiel.clients.push({
-          clientId,
-          order,
-          spielerName,
-        });
+        const spiel = spiele[spielId];
 
-        const payload = {
-          method: 'join',
-          spiel,
-          mitteilung
-        };
+        // maximale Spieler auf 4 gesetzt; wenn bereits die maximale Anzahl an Spieler dem Spiel beigetreten ist
+        if (spiel.clients.length >= 4) {
+          const mitteilung = `Das Spiel mit der ID ${spielId} hat leider bereits die maximale Teilnehmerzahl von Vier. Du kannst dem nicht mehr beitreten.`;
 
-        // loope durch alle Spieler und sage ihnen, dass jemand dem Spiel beigetreten ist
-        spiel.clients.forEach(client => {
-          clients[client.clientId].connection.send(JSON.stringify(payload));
-        });
+          const payload = {
+            method: 'startseiteWarnung',
+            mitteilung
+          };
+
+          clients[clientId].connection.send(JSON.stringify(payload));
+
+          // falls sich ein Spieler mehrmals (mit derselben clientId) einem Spiel beitreten möchte
+        } else if (spiel.clients.find(client => client.clientId === clientId)) {
+          const mitteilung = `Du bist bereits dem Spiel mit der ID ${spielId} beigetreten, du kannst dem nicht noch einmal beitreten.`;
+
+          const payload = {
+            method: 'startseiteWarnung',
+            mitteilung
+          };
+
+          clients[clientId].connection.send(JSON.stringify(payload));
+        } else {
+          const order = spiel.clients.length;
+          const mitteilung = `Du bist erfolgreich mit dem Spielernamen ${spielerName} dem Spiel mit der ID ${spielId} beigetreten.`;
+          spiel.clients.push({
+            clientId,
+            order,
+            spielerName,
+          });
+
+          const payload = {
+            method: 'join',
+            spiel,
+            mitteilung
+          };
+
+          // loope durch alle Spieler und sage ihnen, dass jemand dem Spiel beigetreten ist
+          spiel.clients.forEach(client => {
+            clients[client.clientId].connection.send(JSON.stringify(payload));
+          });
+        }
       }
     }
 
@@ -155,7 +168,7 @@ websocket.on('request', request => {
     if (result.method === 'start') {
       const clientId = result.clientId;
       const spielId = result.spielId;
-      
+
       // Wenn kein spielId vorhanden
       if (!spielId) {
         const mitteilung = 'Du bist keinem Spiel beigetreten. Bitte trete einem Spiel bei bevor du ein Spiel startest.';
