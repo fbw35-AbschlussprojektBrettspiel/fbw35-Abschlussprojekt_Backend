@@ -120,8 +120,19 @@ websocket.on('request', request => {
       } else {
         const spiel = spiele[spielId];
 
-        // maximale Spieler auf 4 gesetzt; wenn bereits die maximale Anzahl an Spieler dem Spiel beigetreten ist
-        if (spiel.clients.length >= 4) {
+        // Wenn die spielId ungültig ist
+        if (!spiel) {
+          const mitteilung = `Ungültige Spiel-ID ${spielId}`;
+
+          const payload = {
+            method: 'startseiteWarnung',
+            mitteilung
+          };
+
+          clients[clientId].connection.send(JSON.stringify(payload));
+
+          // maximale Spieler auf 4 gesetzt; wenn bereits die maximale Anzahl an Spieler dem Spiel beigetreten ist
+        } else if (spiel.clients.length >= 4) {
           const mitteilung = `Das Spiel mit der ID ${spielId} hat leider bereits die maximale Teilnehmerzahl von Vier. Du kannst dem nicht mehr beitreten.`;
 
           const payload = {
