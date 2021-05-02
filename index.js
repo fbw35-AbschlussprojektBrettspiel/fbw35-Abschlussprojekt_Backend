@@ -118,7 +118,7 @@ websocket.on('request', request => {
         };
 
         clients[clientId].connection.send(JSON.stringify(payload));
-        
+
         // falls sich ein Spieler mehrmals (mit derselben clientId) einem Spiel beitreten möchte
       } else if (spiel.clients.find(client => client.clientId === clientId)) {
         const mitteilung = `Du bist bereits dem Spiel mit der ID ${spielId} beigetreten, du kannst dem nicht noch einmal beitreten.`;
@@ -155,32 +155,57 @@ websocket.on('request', request => {
     if (result.method === 'start') {
       const clientId = result.clientId;
       const spielId = result.spielId;
-      const spiel = spiele[spielId];
-      const initialPositionen = {};
-      spiel.clients.forEach(client => initialPositionen[client.order] = 0);
-      // evtl. hier eine Prüfung hinzufügen, ob der Nutzer dem Spiel beigetreten ist
+      
+      // Wenn kein spielId vorhanden
+      if (!spielId) {
+        const mitteilung = 'Du bist keinem Spiel beigetreten. Bitte trete einem Spiel bei bevor du ein Spiel startest.';
 
-      // Fragen und Aktionen werden beim Start eines Spiels aus DB geholt und im spiel-Objekt gespeichert,
-      // aber nicht an clients geschickt
-      Frage.find().lean()
-        .then(result => {
-          spiel.fragen = result;
-          return Aktion.find().lean();
-        })
-        .then(result => {
-          spiel.aktionen = result;
+        const payload = {
+          method: 'startseiteWarnung',
+          mitteilung
+        };
+
+        clients[clientId].connection.send(JSON.stringify(payload));
+      } else {
+        const spiel = spiele[spielId];
+
+        // Wenn zwar spielId vorhanden, der Client dem Spiel aber (noch) nicht beigetreten ist
+        if (!spiel.clients.find(client => client.clientId === clientId)) {
+          const mitteilung = `Du bist dem Spiel mit der ID ${spielId} nicht beigetreten. Bitte trete dem zuerst bei, bevor du das Spiel startest.`;
 
           const payload = {
-            method: 'start',
-            spielfeldArray: spiel.spielfeldArray,
-            initialPositionen
+            method: 'startseiteWarnung',
+            mitteilung
           };
 
-          spiel.clients.forEach(client => {
-            clients[client.clientId].connection.send(JSON.stringify(payload));
-          });
-        })
-        .catch(err => console.log(err));
+          clients[clientId].connection.send(JSON.stringify(payload));
+        } else {
+          const initialPositionen = {};
+          spiel.clients.forEach(client => initialPositionen[client.order] = 0);
+
+          // Fragen und Aktionen werden beim Start eines Spiels aus DB geholt und im spiel-Objekt gespeichert,
+          // aber nicht an clients geschickt
+          Frage.find().lean()
+            .then(result => {
+              spiel.fragen = result;
+              return Aktion.find().lean();
+            })
+            .then(result => {
+              spiel.aktionen = result;
+
+              const payload = {
+                method: 'start',
+                spielfeldArray: spiel.spielfeldArray,
+                initialPositionen
+              };
+
+              spiel.clients.forEach(client => {
+                clients[client.clientId].connection.send(JSON.stringify(payload));
+              });
+            })
+            .catch(err => console.log(err));
+        }
+      }
     }
 
     // Ein Nutzer möchte würfeln
