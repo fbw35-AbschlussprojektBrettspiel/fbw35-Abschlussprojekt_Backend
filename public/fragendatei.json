@@ -51,7 +51,7 @@
   },
     {
     "thema":"html",
-    "frage":"Wählen sie das richtige HTML-Element, um wichtigen Text zu definieren" ,
+    "frage":"Wähle das richtige HTML-Element, um wichtigen Text zu definieren" ,
     "antworten": ["<important>", "<br>", "<i>", "<strong>"],
     "indexRichtigeAntwort": 3
   },
@@ -70,7 +70,7 @@
   },
     {
     "thema": "html",
-    "frage":"Wie können sie einen Link in einem neuen Tab/Browser-Fenster öffnen?" ,
+    "frage":"Wie kannst du einen Link in einem neuen Tab/Browser-Fenster öffnen?" ,
     "antworten": ["<a href='url' target ='_blank'>", "<a href='url' new>", "<a href='url' target='new'>" ],
     "indexRichtigeAntwort": 0
   },
@@ -82,13 +82,13 @@
   },
     {
     "thema": "html",
-    "frage": "Wie können sie eine nummerierte Liste erstellen?",
+    "frage": "Wie kannst du eine nummerierte Liste erstellen?",
     "antworten": ["<dl>", "<ul>", "<list>", "<ol>"],
     "indexRichtigeAntwort": 3
   },
     {
     "thema": "html",
-    "frage": "Wie können sie eine Liste mit Aufzählungszeichen erstellen?",
+    "frage": "Wie kannst du eine Liste mit Aufzählungszeichen erstellen?",
     "antworten": ["<ol>", "<dl>", "<ul>", "<list>"],
     "indexRichtigeAntwort": 2
   },
@@ -265,7 +265,7 @@
   },
     {
     "thema": "css",
-    "frage": "Wie fügen Sie eine Hintergrundfarbe für alle",
+    "frage": "Wie fügst du eine Hintergrundfarbe für alle",
     "antworten": ["all.h1{background-color:#FFFFFF;}", "h1 {background-color:#FFFFFF;}", "h1.all {background-color:#FFFFFF}" ],
     "indexRichtigeAntwort": 1
   },
@@ -513,7 +513,7 @@
   },
     {
     "thema": "css",
-    "frage": "Wie fügen Sie einen Kommentar in eine CSS-Datei ein?",
+    "frage": "Wie fügst du einen Kommentar in eine CSS-Datei ein?",
     "antworten": ["//dies ist ein Kommentar//", "`dies ist ein Kommentar", "//dies ist ein Kommentar", "/*dies ist ein Kommentar*/"],
     "indexRichtigeAntwort": 3
   },
@@ -537,7 +537,7 @@
   },
     {
     "thema": "css",
-    "frage": "Wie zeigen Sie Hyperlinks ohne Unterstreichung an?",
+    "frage": "Wie zeigst du Hyperlinks ohne Unterstreichung an?",
     "antworten": ["a {underline:none;}", "a {text-decoration:no-underline;}", "a {text-decoration:none;}", "a {decoration:no-underline;}" ],
     "indexRichtigeAntwort": 2
   },
@@ -555,7 +555,7 @@
   },
     {
     "thema": "css",
-    "frage": "Wie machen Sie den Text fett?",
+    "frage": "Wie machst du den Text fett?",
     "antworten": ["font:bold", "style:bold", "font-weight:bold"],
     "indexRichtigeAntwort": 2
   },
@@ -573,25 +573,25 @@
   },
     {
     "thema": "css",
-    "frage": "Bei Verwendung der Padding-Eigenschaft; dürfen Sie negative Werte verwenden?",
+    "frage": "Bei Verwendung der Padding-Eigenschaft; darfst du negative Werte verwenden?",
     "antworten": ["ja", "nein", "manchmal"],
     "indexRichtigeAntwort": 1
   },  
     {
     "thema": "css",
-    "frage": "Wie erstellen Sie eine Liste, die ihre Elemente mit Quadraten auflistet?",
+    "frage": "Wie erstellst du eine Liste, die ihre Elemente mit Quadraten auflistet?",
     "antworten": ["list-style-type:square", "list-type:square", "list:square"],
     "indexRichtigeAntwort": 0
   },
     {
     "thema": "css",
-    "frage": "Wie wählen Sie ein Element mit der ID 'demo'?",
+    "frage": "Wie wählst du ein Element mit der ID 'demo'?",
     "antworten": ["demo", ".demo", "*demo", "#demo" ],
     "indexRichtigeAntwort": 3
   },
     {
     "thema": "css",
-    "frage": "Wie wählen Sie Elemente mit dem Klassennamen 'test'?",
+    "frage": "Wie wählst du Elemente mit dem Klassennamen 'test'?",
     "antworten": ["*test", ".test", "#test", "test"],
     "indexRichtigeAntwort": 1
   },
@@ -687,7 +687,7 @@
   },
     {
     "thema": "bootstrap",
-    "frage": "Wie können Sie ein Suchsymbol einfügen?",
+    "frage": "Wie kannst du ein Suchsymbol einfügen?",
     "antworten": ["<span class='Glyphen-Glyphensuche'></span>", "<span class='glyphicon glyphicon-search'></span>", "<span class='glyphicon-search'></span>", 
     "<span class='Glyphicon-Suche'></span>"],
     "indexRichtigeAntwort": 1
