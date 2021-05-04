@@ -77,7 +77,7 @@ websocket.on('request', request => {
       const clientId = result.clientId;
       const spielId = getUniqueID();
       // Spielfeld-Array. Die Elemente repräsentieren die Feldtypen
-      const spielfeldArray = Array(60).fill(null).map((element, index) => (index - 1) % 4 === 0 ? 'html' :
+      const spielfeldArray = Array(61).fill(null).map((element, index) => (index - 1) % 4 === 0 ? 'html' :
         (index - 1) % 4 === 1 ? 'css' :
           (index - 1) % 4 === 2 ? 'javascript' :
             (index - 1) % 4 === 3 ? 'aktion' :
