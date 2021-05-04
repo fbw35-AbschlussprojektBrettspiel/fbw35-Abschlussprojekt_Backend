@@ -1,68 +1,40 @@
-# DAS BRETTSPIEL - Das Online-Spiel
-![logo](img/../public/img/LogoSpiel.png)
+# WebDev - Das ~~Brett~~ Onlinespiel
+![logo](./public/img/LogoSpiel.png)
 
+Eine ausführliche Beschreibung des Projekts findest du in unserem [Frontend-Repository](https://github.com/fbw35-AbschlussprojektBrettspiel/fbw35-Abschlussprojekt_Frontend).
 
-![build succeeded](https://img.shields.io/badge/build-succeeded-brightgreen.svg)
+Wie weit reichen deine WebDev-Kenntnisse? Hier ist eine tolle Möglichkeit, dies herauszufinden! Mit diesem Brettspiel kannst du alleine oder online mit anderen zusammen ganz einfach euer Wissen testen. Zusätzlich gibt es noch Witze und Anekdoten aus einem WebDev-Kurs.
 
-  **Wie weit reichen deine Dev-Web? Hier ist eine tolle Möglichkeit, dies herauszufinden! 
-  Mit diesem Brettspiel kannst du ganz einfach dein Wissen testen und deine IT-Fähigkeiten üben. Zusätzlich bietet unsere Anwendung die Möglichkeit, online mit einer anderen Person zu spielen.**
+![screen]()
 
-![screen](img/../public/img/ScreenSpiel.png)
+[Beispiel-Deployment auf Heroku](https://webdev-brettspiel-frontend.herokuapp.com/)
 
-# Beginn der Arbeiten
+## Instalation
 
-  **Diese Anweisungen ermöglichen es Ihnen, eine Kopie des Projekts auf Ihrem lokalen Computer zu Entwicklungs- und Testzwecken zu erstellen.**
+Um das Spiel zu clonen und zu starten, müssen [Git](https://git-scm.com) und [Node.js](https://nodejs.org/en/download/) auf dem Rechner installiert sein. Außerdem muss entweder [MongoDB](https://www.mongodb.com/) auf dem Rechner installiert sein, oder du benötigst einen Link zu einer MongoDB-Datenbank (wie z.B. [MongoDB Atlas](https://www.mongodb.com/cloud/atlas2)).
 
-# Installation
+### Backend
 
-Du hast 2 Möglichkeiten dieses Spiel zu spielen: Online oder lokal.
+Aus der Kommandozeile:
 
-Als Beispiel zum Anschauen nutzt Du bitte: https://webdev-brettspiel-frontend.herokuapp.com/
+```bash
+# Clone das Backend-Repository
+$ git clone https://github.com/fbw35-AbschlussprojektBrettspiel/fbw35-Abschlussprojekt_Backend.git
 
-Für das lokale Spiel:
+# Gehe in das Verzeichnis
+cd fbw35-Abschlussprojekt_Backend/
 
-1.  musst Du Frontend und Backend runter laden. 
-2.  Nach npm instalation beide Dateien müssen offen sein!!!
+# Installiere Dependencies
+$ npm install
+```
 
-Hier findest Du link zum unserer [Frontend](https://github.com/fbw35-AbschlussprojektBrettspiel/fbw35-Abschlussprojekt_Frontend/tree/main/src)
+Du kannst eine `.env` Datei im Root-Verzeichnes anlegen. Darin können die Umgebungsvariablen `PORT` für den benutzten Port und `DB` für die MongoDB angegeben werden. Ohne sie werden die Standardwerte sind `3050` und `mongodb://localhost:27017/quizfragen` benutzt.
 
+```bash
+# Skripts starten, um Fragen und Aktionen aus den JSON-Dateien in public-Ordner in die Datenbank zu schreiben
+$ npm run pushFragen fragendatei.json
+$ npm run pushAktionen actiondatei.json
 
-### `npm install`
-
-
-Must Du eine .env Datei im Rootverzeichnis anlegen:
-
-### `npm start`
-
-startet den Server aufn Port 3050.
-[http://localhost:3050/fragen](http://localhost:3050/fragen) ist die GET-Anfragen für alle Quizfragen.
-
-### `npm run watch`
-
-startet den Server mit nodemon
-
-### `npm run pushFragen datei.json`
-
-pusht die Fragen aus der json-Datei, die im Ordner public liegen soll, auf die Datenbank
-
-### `npm run pushAktionen datei.json`
-
-pusht die Aktionen aus der json-Datei, die im Ordner public liegen soll, auf die Datenbank
-
-
-
-# Software und Freamworks:
-
-> * npm-Packete (express,mongoose,dotenv,Websocket)
-
-
-# Autoren
-* [Anton Tun Huang](https://github.com/TunHuang)
-* [Christoph Bochniak](https://github.com/Christoph86)
-* [Sebastian Opaska](https://github.com/sopaska)
-* [Corinna Hellmund](https://github.com/CoraHell)
-
-
-
-
-
+# Starte den Server
+$ npm start
+```
