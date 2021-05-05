@@ -133,7 +133,7 @@ websocket.on('request', request => {
           clients[clientId].connection.send(JSON.stringify(payload));
         } else {
           const order = spiel.clients.length;
-          const mitteilung = `Du bist erfolgreich ${spielerName ? `mit dem Spielernamen ${spielerName} ` : ''}dem Spiel mit der ID ${spielId} beigetreten.`;
+          const mitteilung = `${spielerName} ? ${spielerName} : 'Ein neuer Spieler'} ist erfolgreich dem Spiel mit der ID ${spielId} beigetreten.`;
           spiel.clients.push({
             clientId,
             order,
