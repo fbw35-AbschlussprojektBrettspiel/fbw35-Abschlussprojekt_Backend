@@ -133,7 +133,7 @@ websocket.on('request', request => {
           clients[clientId].connection.send(JSON.stringify(payload));
         } else {
           const order = spiel.clients.length;
-          const mitteilung = `Du bist erfolgreich ${spielerName ? `mit dem Spielernamen ${spielerName} ` : ''}dem Spiel mit der ID ${spielId} beigetreten.`;
+          const mitteilung = `${spielerName ? spielerName : 'Ein neuer Spieler'} ist erfolgreich dem Spiel mit der ID ${spielId} beigetreten.`;
           spiel.clients.push({
             clientId,
             order,
@@ -221,6 +221,26 @@ websocket.on('request', request => {
       const payload = {
         method: 'wuerfeln',
         gewuerfelteZahl
+      };
+
+      spiel.clients.forEach(client => {
+        clients[client.clientId].connection.send(JSON.stringify(payload));
+      });
+    }
+
+    // Ein Nutzer klickt auf eine Antwort
+    if (result.method === 'klickeAntwort') {
+      const clientId = result.clientId;
+      const spielId = result.spielId;
+      const indexAntwort = result.indexAntwort;
+      const istKorrekt = result.istKorrekt;
+      const spiel = spiele[spielId];
+
+      const antwortFeedback = [indexAntwort, istKorrekt];
+
+      const payload = {
+        method: 'klickeAntwort',
+        antwortFeedback
       };
 
       spiel.clients.forEach(client => {
