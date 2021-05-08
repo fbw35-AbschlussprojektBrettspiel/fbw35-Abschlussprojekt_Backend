@@ -5,7 +5,7 @@ Eine ausführliche Beschreibung des Projekts findest du in unserem [Frontend-Rep
 
 Wie weit reichen deine WebDev-Kenntnisse? Hier ist eine tolle Möglichkeit, dies herauszufinden! Mit diesem Brettspiel kannst du alleine oder online mit anderen zusammen ganz einfach euer Wissen testen. Zusätzlich gibt es noch Witze und Anekdoten aus einem WebDev-Kurs.
 
-![screen]()
+![screen](./public/img/screenshot.jpg)
 
 [Beispiel-Deployment auf Heroku](https://webdev-brettspiel-frontend.herokuapp.com/)
 
@@ -28,12 +28,13 @@ cd fbw35-Abschlussprojekt_Backend/
 $ npm install
 ```
 
-Du kannst eine `.env` Datei im Root-Verzeichnes anlegen. Darin können die Umgebungsvariablen `PORT` für den benutzten Port und `DB` für die MongoDB angegeben werden. Ohne sie werden die Standardwerte sind `3050` und `mongodb://localhost:27017/quizfragen` benutzt.
+Du kannst eine `.env` Datei im Root-Verzeichnes anlegen. Darin können die Umgebungsvariablen `PORT` für den benutzten Port und `DB` für die MongoDB angegeben werden. Ohne sie werden die Standardwerte `3050` und `mongodb://localhost:27017/quizfragen` benutzt.
 
 ```bash
 # Skripts starten, um Fragen und Aktionen aus den JSON-Dateien in public-Ordner in die Datenbank zu schreiben
+# Du kannst auch eigene json-Dateien benutzen
 $ npm run pushFragen fragendatei.json
-$ npm run pushAktionen actiondatei.json
+$ npm run pushAktionen aktiondatei.json
 
 # Starte den Server
 $ npm start
