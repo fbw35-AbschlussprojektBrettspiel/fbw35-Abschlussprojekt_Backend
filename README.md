@@ -3,7 +3,7 @@
 
 Eine ausführliche Beschreibung des Projekts findest du in unserem [Frontend-Repository](https://github.com/fbw35-AbschlussprojektBrettspiel/fbw35-Abschlussprojekt_Frontend).
 
-Wie weit reichen deine WebDev-Kenntnisse? Hier ist eine tolle Möglichkeit, dies herauszufinden! Mit diesem Brettspiel kannst du alleine oder online mit anderen zusammen ganz einfach euer Wissen testen. Zusätzlich gibt es noch Witze und Anekdoten aus einem WebDev-Kurs.
+Wie weit reichen deine WebDev-Kenntnisse? Hier ist eine tolle Möglichkeit, es herauszufinden! Mit diesem Brettspiel kannst du alleine oder online mit anderen zusammen ganz einfach euer Wissen testen. Zusätzlich gibt es noch Witze und Anekdoten aus einem WebDev-Kurs.
 
 ![screen](./public/img/screenshot.jpg)
 
@@ -38,4 +38,7 @@ $ npm run pushAktionen aktiondatei.json
 
 # Starte den Server
 $ npm start
+
+# Oder starte den Server mit nodemon
+$ npm run watch
 ```
