@@ -1,38 +1,38 @@
 [
     {
-    "beschreibung": "Dein Kind/Haustier hat auf eine Taste gedrückt. Jetzt ist dein gesamter Code gelöscht.",
-    "positionsAenderung": -4
+    "beschreibung": "Dein Haustier hat auf eine mysteriöse Taste gedrückt. Jetzt ist dein gesamter Code gelöscht.",
+    "positionsAenderung": -3
   },
     {
     "beschreibung": "Ein netter Kollege hat den Seiten-Code schon geschrieben, du bist fertig mit dem Schreiben dieser Webseite.",
-    "positionsAenderung": 4
+    "positionsAenderung": 3
   },
     {
     "beschreibung": "Du hast ein Komma statt eines Semikolons gesetzt. Jetzt kannst du den Fehler nicht finden und verbringst viel Zeit mit der Fehlersuche.",
     "positionsAenderung": -3
   },
     {
-    "beschreibung": "In einem Test wurde bei dir Corona festgestellt. Jetzt bist du in Quarantäne und hast viel Zeit zum Code-Schreiben.",
-    "positionsAenderung": 3 
+    "beschreibung": "Du musst zwei Wochen in die Quarantäne. Aber immerhin hast du jetzt viel Zeit zum Code Schreiben.",
+    "positionsAenderung": -1
   },
     {
-    "beschreibung": "Dein Internet ist instabil und du kannst den Code nicht hochladen.",
+    "beschreibung": "Dein Internet ist instabil und du kannst den Code nicht auf Github pushen.",
     "positionsAenderung": -1
   },
     {
     "beschreibung": "Du hast einen dringenden Abgabetermin und hast deshalb die ganze Nacht durchgearbeitet.",
-    "positionsAenderung": 3 
+    "positionsAenderung": 1
   },
     {
-    "beschreibung": "Du warst gestern auf einer Party und hast die Zeit vergessen. Heute fällt es dir schwer zu Arbeiten.",
+    "beschreibung": "Du warst gestern auf einer Party und hast die Zeit vergessen. Heute fällt es dir schwer zu arbeiten.",
     "positionsAenderung": -2
   },
     {
-    "beschreibung": "Du hast Kaffee über deine Konsole gekippt, jetzt musst du erst einmal aufwischen und die Konsole trocknen.",
+    "beschreibung": "Du hast Kaffee über die Tastatur gekippt, jetzt musst du erst einmal aufwischen und die Tastatur trocknen.",
     "positionsAenderung": -1
   },
     {
-    "beschreibung": "Deine Familie ist total sauer, weil du 'nur noch vor dem Computer' sitzt. Um den Frieden wieder herzustellen, fährst du mit ihnen in den Kurzurlaub." ,
+    "beschreibung": "Deine Familie ist total sauer, weil du 'nur noch vor dem Computer' sitzt. Um den Frieden wiederherzustellen, fährst du mit ihnen in den Kurzurlaub." ,
     "positionsAenderung": -3
   },
     {
@@ -41,11 +41,11 @@
   },
     {
     "beschreibung": "Ein Kollege hat dir einen Tipp gegeben, um dein Problem beim Code-Schreiben zu lösen. Das spart dir viel Zeit.",
-    "positionsAenderung": 3
+    "positionsAenderung": 2
   },
     {
     "beschreibung": "Dein Partner bringt dir einen Kaffee und etwas zu Essen. Dadurch kannst du ohne Pause weiterarbeiten.",
-    "positionsAenderung": 2
+    "positionsAenderung": 1
   },
     {
     "beschreibung": "Du musst dringed noch etwas zu Essen kaufen. Da du sehr schnell sein musst, kannst du es als sportliche Übung berechnen.",
@@ -53,10 +53,10 @@
   },
     {
     "beschreibung": "Dein Computer ist defekt, jetzt brauchst du einen Neuen.",
-    "positionsAenderung": -4
+    "positionsAenderung": -3
   },
     {
-    "beschreibung": "Das Upload eines wichtigen Programmes zeigt Fehler an. Jetzt musst du nach dem Fehler suchen.",
+    "beschreibung": "Das Pull Request auf Github zeigt Merge-Konflikt an. Jetzt musst du den Konflikt erst lösen.",
     "positionsAenderung": -2 
   },
     {
@@ -73,10 +73,10 @@
   },
     {
     "beschreibung": "Du bist in einer Videokonferenz und es gibt einen regen Austausch.",
-    "positionsAenderung": 3
+    "positionsAenderung": 2
  },
     {
-    "beschreibung": "Wie zieht ein Entwickler seine Freundin aus? 'getStringFromQbject'",
+    "beschreibung": "Wie zieht ein Entwickler seine Freundin aus? 'getStringFromObject'",
     "positionsAenderung": 1
  },
     {   
@@ -112,7 +112,7 @@
        "positionsAenderung": 2
  },
     {
-        "beschreibung":"Warum mögen Frauen objektorientierte Programmierer? 'Weil sie Klasse haben'",
-        "positionsAenderung": 2
+      "beschreibung":"Warum mögen Frauen objektorientierte Programmierer? 'Weil sie Klasse haben'",
+      "positionsAenderung": 2
     }
 ]

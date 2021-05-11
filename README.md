@@ -9,7 +9,7 @@ Wie weit reichen deine WebDev-Kenntnisse? Hier ist eine tolle Möglichkeit, es h
 
 [Beispiel-Deployment auf Heroku](https://webdev-brettspiel-frontend.herokuapp.com/)
 
-## Instalation
+## Installation
 
 Um das Spiel zu clonen und zu starten, müssen [Git](https://git-scm.com) und [Node.js](https://nodejs.org/en/download/) auf dem Rechner installiert sein. Außerdem muss entweder [MongoDB](https://www.mongodb.com/) auf dem Rechner installiert sein, oder du benötigst einen Link zu einer MongoDB-Datenbank (wie z.B. [MongoDB Atlas](https://www.mongodb.com/cloud/atlas2)).
 

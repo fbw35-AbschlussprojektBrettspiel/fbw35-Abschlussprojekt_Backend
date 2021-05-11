@@ -13,7 +13,7 @@
   },
     {
    "thema": "html",
-   "frage":"Das HTML-Element für die richtige Überschrift ist?",
+   "frage":"Das HTML-Element für die wichtigste Überschrift ist?",
    "antworten": ["<heading>","<h6>","<head>","<h1>"],
    "indexRichtigeAntwort": 3
   },
@@ -39,13 +39,13 @@
   },
     {
     "thema": "html",
-    "frage":"Was ist das richtige HTML-Element, zum Einfügen eines Zeilenumbruchs?" ,
+    "frage":"Was ist das richtige HTML-Element zum Einfügen eines Zeilenumbruchs?" ,
     "antworten": ["<br>", "<break>", "<lb>" ],
     "indexRichtigeAntwort": 0
   },
     {
     "thema": "html",
-    "frage":"Wie ist der richtige HTML-Code, zum Hinterlegen der Hintergrundfarbe?",
+    "frage":"Wie ist der richtige HTML-Code zum Hinterlegen der Hintergrundfarbe?",
     "antworten": ["<background>yellow</background>","<body bg ='yellow'>", "<body style ='background-color:yellow;'>" ],
     "indexRichtigeAntwort": 2
   },
@@ -106,13 +106,13 @@
   },
     {
     "thema": "html" ,
-    "frage":"Was ist der richtige HTML_Code zum Erstellen einer Dropdown-Liste?",
+    "frage":"Was ist der richtige HTML-Code zum Erstellen einer Dropdown-Liste?",
     "antworten": ["<input type='dropdown'>", "<list>", "<input type='list'>", "<select>" ],
     "indexRichtigeAntwort": 3
   },
     {
     "thema": "html" ,
-    "frage": "Was ist der richtige HTML-Code zum Erstellen eines Texbereichs?",
+    "frage": "Was ist der richtige HTML-Code zum Erstellen eines Textbereichs?",
     "antworten": ["<textarea>", "<input type= 'textarea'>", "<input type='textbox'>" ],
     "indexRichtigeAntwort": 0
   },
@@ -192,9 +192,9 @@
     {
     "thema": "html",
     "frage": "Das globale HTML-Attribut 'contenteditable' wird verwendet, um:",
-    "antworten": ["an zu geben, ob der Inhalt eines Elements bearbeitet werden soll oder nicht", "den Inhalt vom Server zu aktualisieren", 
-       "das Kontextmenü für ein Element an zu geben. Das Menü an zu zeigt, wenn ein Benutzer mit der rechten Maustaste auf das Element klickt", 
-       "Die Position des ersten gefundenen Vorkommens von Inhalten innerhalb einer Zeichenfolge zurück zu geben."],
+    "antworten": ["anzugeben, ob der Inhalt eines Elements bearbeitet werden kann oder nicht", "den Inhalt vom Server zu aktualisieren", 
+       "das Kontextmenü für ein Element anzugeben. Das Menü zeigt an, wenn ein Benutzer mit der rechten Maustaste auf das Element klickt", 
+       "die Position des ersten gefundenen Vorkommens von Inhalten innerhalb einer Zeichenfolge zurückzugeben."],
     "indexRichtigeAntwort": 0
   },
     {
@@ -218,7 +218,7 @@
     {
     "thema": "html",
     "frage": "Das HTML-Element <canvas> wird verwendet, um:",
-    "antworten": ["ziehbare Elemente zu Erstellen", "Grafiken zu Zeichnen", "Daten in MySQL zu Bearbeiten","Datenbankdatensätze an zu zeigen"],
+    "antworten": ["ziehbare Elemente zu erstellen", "Grafiken zu zeichnen", "Daten in MySQL zu bearbeiten","Datenbankdatensätze anzuzeigen"],
     "indexRichtigeAntwort": 1
   },
     {
@@ -265,7 +265,7 @@
   },
     {
     "thema": "css",
-    "frage": "Wie fügst du eine Hintergrundfarbe für alle",
+    "frage": "Wie fügst du eine Hintergrundfarbe für alle h1-Titel?",
     "antworten": ["all.h1{background-color:#FFFFFF;}", "h1 {background-color:#FFFFFF;}", "h1.all {background-color:#FFFFFF}" ],
     "indexRichtigeAntwort": 1
   },
@@ -322,7 +322,7 @@
   },
     {
     "thema": "javascript",
-    "frage": "Was ist die richtige Syntax um eine Funktion zu deklarieren?",
+    "frage": "Was ist die richtige Syntax, um eine Funktion zu deklarieren?",
     "antworten": ["MyFunction(){}", "Function(){}", "function MyFunction(){}"],
     "indexRichtigeAntwort": 2
   },
@@ -343,37 +343,25 @@
     "thema": "javascript",
     "frage": "Was macht der Befehl .charAt()?",
     "antworten": ["Er gibt den Index an, andem das übergebene Wort beginnt",
-      "Er gibt den char zurück, an dem index, den man ihm gibt",
+      "Er gibt das Zeichen zurück, an dem index, den man ihm gibt",
       "Er gibt ein array zurück, wo der String an den übergebenem String gespalten wurde"],
     "indexRichtigeAntwort": 1
   },
     {
     "thema": "javascript" ,
-    "frage": "Welches der folgenden Objekte ist ein serverseitiges Java Script-Objekt?",
-    "antworten": ["Function", "File", "FileUpload", "Date"],
-    "indexRichtigeAntwort": 1
-  },
-    {
-    "thema": "javascript" ,
-    "frage": "Java-Skript kann zum Speichern des Formularinhalts in einer Datenbankdatei auf dem Server verwendet werden?",
+    "frage": "JavaScript kann zum Speichern des Formularinhalts in einer Datenbankdatei auf dem Server verwendet werden?",
     "antworten": ["falsch", "wahr"],
     "indexRichtigeAntwort": 0
   },
     {
     "thema": "javascript",
-    "frage": "Welches Tag wird verwendet, um ein JavaScript in eine HTML-Seite einzufügen?",
+    "frage": "Welches Tag wird verwendet, um JavaScript in eine HTML-Seite einzufügen?",
     "antworten": ["< script=’java’>", "< javascript>", "< script>", "<js>"],
     "indexRichtigeAntwort": 2
   },
     {
     "thema": "javascript",
-    "frage": "Welche der folgenden Zeichen wird im Java-Skript zum Einfügen von Sonderzeichen verwendet?",
-    "antworten": ["&", "/",  "-", "%"],
-    "indexRichtigeAntwort": 1
-  },
-    {
-    "thema": "javascript",
-    "frage": "Wie speichert Java Script Datumsangaben in Objekten vom Typ 'Datum'?",
+    "frage": "Wie speichert JavaScript Datumsangaben in Objekten vom Typ 'Datum'?",
     "antworten": ["Die Anzahl der Tage seit dem 1. Januar 1900", "Die Anzahl der Sekunden seit dem 1. Januar 1970",
       "Die Anzahl der Millisekunden seit dem 1. Januar 1970", "Die Anzahl der Pikosekunden seit dem 1. Januar 1970"],
     "indexRichtigeAntwort": 1
@@ -406,15 +394,15 @@
   },
     {
     "thema": "javascript",
-    "frage": "Wie fügt man einen Wert an ein Array von Java Script an?",
+    "frage": "Wie fügt man einen Wert an ein Array von JavaScript an?",
     "antworten": ["arr[arr.length] = value", "arr[arr.length+1] = new Arrays()", "arr[arr.length-1] = value",
        "arr[arr.length*1] = value"],
     "indexRichtigeAntwort": 0
   },
     {
     "thema": "javascript",
-    "frage":"Java Script entities start with ____________ and end with ______________",
-    "antworten": ["Semicolon, colon", "Semicolon, Ampersand", "Ampersand, colon", "Ampersand, semicolon"],
+    "frage":"Ein JavaScript Entity startet mit ____________ und endet mit ______________",
+    "antworten": ["Semikolon, Doppelpunkt", "Semikolon, Et-Zeichen", "Et-Zeichen, Doppelpunkt", "Et-Zeichen, Semikolon"],
     "indexRichtigeAntwort": 3
   },
     {
@@ -425,8 +413,8 @@
   },
     {
     "thema":"javascript",
-    "frage": "Welche der folgenden Methoden wird verwendet, um eine Zeichenfolge von JavaScript-Code, im Kontext des angegeben Objekts auszuwerten?",
-    "antworten": ["Eval", "ParseDoule", "ParseObject", "Efloat"],
+    "frage": "Welche der folgenden Methoden wird verwendet, um eine Zeichenfolge von JavaScript-Code, im Kontext des angegebenen Objekts auszuwerten?",
+    "antworten": ["eval", "parseDoule", "parseObject", "efloat"],
     "indexRichtigeAntwort": 0
   },
     {
@@ -437,7 +425,7 @@
   },
     {
     "thema":"javascript",
-    "frage": "Ist es möglich, eine Variable in Java Script entlang ihres Typs zu deklarieren?",
+    "frage": "Ist es möglich, eine Variable in JavaScript entlang ihres Typs zu deklarieren?",
     "antworten": ["ja", "nein"],
     "indexRichtigeAntwort": 0
   }, 
@@ -449,13 +437,13 @@
   },
     {
     "thema": "javascript",
-    "frage": "Welches der folgenden Objekte ist ein clientseitiges Java Script-Objekt?",
+    "frage": "Welches der folgenden Objekte ist ein clientseitiges JavaScript-Objekt?",
     "antworten": ["File", "Function", "FileUpload", "Time"],
     "indexRichtigeAntwort": 2
   },
     {
     "thema": "javascript",
-    "frage": "Wie lautet der alternative Name für Java-Skript?",
+    "frage": "Wie lautet der alternative Name für JavaScript?",
     "antworten": ["LimeScript", "Sowohl a als auch d", "ECMScript", "ECMAScript"],
     "indexRichtigeAntwort": 3
   },
@@ -475,7 +463,7 @@
     {
     "thema": "javascript",
     "frage":"Welche Sprache definiert das Verhalten einer Webseite?",
-    "antworten": ["HTML", "CSS", "XML", "Java Script"],
+    "antworten": ["HTML", "CSS", "XML", "JavaScript"],
     "indexRichtigeAntwort": 3
   },
     {
@@ -487,23 +475,16 @@
     {
     "thema": "javascript",
     "frage": "Was ist negative Unendlichkeit in Java-Skript?",
-    "antworten": ["Einer der folgenden", "In JavaScript, abgeleitet durch Dividierung der Zahl durch eine negative Zahl.", 
-     "Nummer in JavaScript, abgeleitet durch Division der Zahl durch Null.", 
-    "Anzahl in JavaScript, abgeleitet durch Division der negativen Zahl durch Null"],
-    "indexRichtigeAntwort": 3
+    "antworten": ["Zahl in JavaScript, abgeleitet von Division der Zahl durch eine negative Zahl.", 
+     "Zahl in JavaScript, abgeleitet von Division der Zahl durch Null.", 
+    "Zahl in JavaScript, abgeleitet von Division der negativen Zahl durch Null"],
+    "indexRichtigeAntwort": 2
   },
     {
     "thema": "javascript",
-    "frage":"Javascript ist eine objektorientierte Sprache?",
+    "frage":"JavaScript ist eine objektorientierte Sprache?",
     "antworten": ["falsch", "wahr"],
     "indexRichtigeAntwort": 1
-  },
-    {
-    "thema": "javascript",
-    "frage": "Welches der folgenden Schritte wird verwendet, um alle Klickereignisse in einem Fenster zu erfassen?",
-    "antworten": ["window.captureEvents(Event.CLICK)", "window.routeEvents(Event.CLICK )", "window.handleEvents (Event.CLICK)",
-      "window.raiseEvents(Event.CLICK )"],
-    "indexRichtigeAntwort": 0
   },
    {
     "thema": "css",
@@ -522,12 +503,6 @@
     "frage": "Welche CSS-Eigenschaft steuert die Textgröße?",
     "antworten": ["text-size", "font-size", "font-style", "text-style"],
     "indexRichtigeAntwort": 1
-  },
-    {
-    "thema": "css",
-    "frage": "Was ist die richtige CSS-Syntax, um alle",
-    "antworten": ["<p style='font-size:bold;'>", "<p style='text-size:bold;'>", "p {text-size:bold;}","p {font-weight:bold;}"],
-    "indexRichtigeAntwort": 3
   },
     {
     "thema": "css",
@@ -558,12 +533,6 @@
     "frage": "Wie machst du den Text fett?",
     "antworten": ["font:bold", "style:bold", "font-weight:bold"],
     "indexRichtigeAntwort": 2
-  },
-    {
-    "thema": "css",
-    "frage": "Wie zeigt man den folgenden Rahmen an: der obere Rahmen = 10 Pixel; der untere Rahmen = 5 Pixel Der linke Rahmen = 20 Pixel Der rechte Rahmen = 1 Pixel?",
-    "antworten": ["border-width:10px 5px 20px 1px", "border-width:10px 20px 5px 1px", "border-width:5px 20px 10px 1px", "border-width:10px 1px 5px 20px"],
-    "indexRichtigeAntwort": 0
   },
     {
     "thema": "css",
@@ -609,7 +578,7 @@
   },
     {
     "thema": "css",
-    "frage": "Was ist der Standardwert der positions-Eigenschaft?",
+    "frage": "Was ist der Standardwert der Positions-Eigenschaft?",
     "antworten": ["absolute", "fixed", "relative", "static"],
     "indexRichtigeAntwort": 3
   },
