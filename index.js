@@ -55,11 +55,12 @@ websocket.on('request', request => {
       const clientId = result.clientId;
       const spielId = getUniqueID();
       // Spielfeld-Array. Die Elemente repräsentieren die Feldtypen
-      const spielfeldArray = Array(61).fill(null).map((element, index) => (index - 1) % 4 === 0 ? 'html' :
-        (index - 1) % 4 === 1 ? 'css' :
-          (index - 1) % 4 === 2 ? 'javascript' :
-            (index - 1) % 4 === 3 ? 'aktion' :
-              'startfeld');
+      // const spielfeldArray = Array(61).fill(null).map((element, index) => (index - 1) % 4 === 0 ? 'html' :
+      //   (index - 1) % 4 === 1 ? 'css' :
+      //     (index - 1) % 4 === 2 ? 'javascript' :
+      //       (index - 1) % 4 === 3 ? 'aktion' :
+      //         'startfeld');
+      const spielfeldArray = ['startfeld', 'html', 'css', 'javascript', 'html', 'css', 'aktion', 'aktion', 'aktion', 'aktion', 'aktion', 'aktion', 'javascript', 'html', 'css', 'javascript', 'aktion', 'html', 'css', 'javascript', 'aktion', 'html', 'css', 'javascript', 'aktion', 'html', 'css', 'javascript', 'aktion', 'html', 'css', 'javascript', 'aktion', 'html', 'css', 'javascript', 'aktion', 'html', 'css', 'javascript', 'aktion', 'html', 'css', 'javascript', 'aktion', 'html', 'css', 'javascript', 'aktion', 'html', 'css', 'javascript', 'aktion', 'html', 'css', 'javascript', 'css', 'html', 'css', 'javascript', 'html'];
       spiele[spielId] = {
         id: spielId,
         clients: [],
