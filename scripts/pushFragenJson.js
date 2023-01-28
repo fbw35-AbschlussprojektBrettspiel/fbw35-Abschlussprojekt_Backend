@@ -7,31 +7,31 @@ const meineArgs = process.argv.slice(2);
 const dateiName = meineArgs[0];
 
 if (!dateiName) {
-  throw new Error('Bitte gib den Namen der json-Datei, die im Ordner public liegen soll, als Argument an.');
+  throw new Error(
+    'Bitte gib den Namen der json-Datei, die im Ordner public liegen soll, als Argument an.'
+  );
 }
 
 const URI = process.env.DB || 'mongodb://localhost:27017/quizfragen';
 
-mongoose.connect(URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
+mongoose.set('strictQuery', false);
+mongoose
+  .connect(URI)
+  .then(() => console.log('Mit MongoDB verbunden.'))
+  .catch((err) => console.log('Verbinden mit MongoDB fehlgeschlagen.', err));
 
-const db = mongoose.connection;
+mongoose.connection.on('error', console.log);
 
-db.on('error', error => console.error(error));
-
-db.once('open', async () => {
-  console.log('Mit der Datenbank verbunden');
-
+pushFragen();
+async function pushFragen() {
   try {
     const data = await fs.promises.readFile('./public/' + dateiName);
     const fragenArray = JSON.parse(data);
     const values = await Frage.insertMany(fragenArray);
-    console.log("erfolgreich auf die Datenbank gepusht.", values);
-    db.close();
+    console.log('erfolgreich auf die Datenbank gepusht.', values);
   } catch (err) {
     console.log(err);
-    db.close();
+  } finally {
+    mongoose.disconnect();
   }
-});
+}

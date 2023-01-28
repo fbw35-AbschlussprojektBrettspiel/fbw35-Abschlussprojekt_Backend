@@ -21,8 +21,8 @@
   },
   "homepage": "https://github.com/fbw35-AbschlussprojektBrettspiel/fbw35-Abschlussprojekt_Backend#readme",
   "dependencies": {
-    "dotenv": "^8.2.0",
-    "mongoose": "^5.12.2",
+    "dotenv": "^16.0.3",
+    "mongoose": "^6.9.0",
     "websocket": "^1.0.34"
   },
   "devDependencies": {

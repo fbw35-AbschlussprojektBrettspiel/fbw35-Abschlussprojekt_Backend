@@ -11,23 +11,22 @@ const Aktion = require('./models/aktion-model');
 const URI = process.env.DB || 'mongodb://localhost:27017/quizfragen';
 const port = process.env.PORT || 3050;
 
-mongoose.connect(URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
+mongoose.set('strictQuery', false);
+mongoose
+  .connect(URI)
+  .then(() => console.log('Mit MongoDB verbunden.'))
+  .catch((err) => console.log('Verbinden mit MongoDB fehlgeschlagen.', err));
 
-const db = mongoose.connection;
-
-db.on('error', error => console.log(error));
-
-db.once('open', () => console.log(`mit der Datenbank verbunden`));
+mongoose.connection.on('error', console.log);
 
 // HTTP-Server mit Websocket
 const server = http.createServer();
-server.listen(port, () => console.log(`Server läuft. Ich lausche auf Port: ${port}`));
+server.listen(port, () =>
+  console.log(`Server läuft. Ich lausche auf Port: ${port}`)
+);
 
 const websocket = new WebSocketServer({
-  httpServer: server
+  httpServer: server,
 });
 
 // Container für Informationen von clients und spielen
@@ -35,18 +34,21 @@ const clients = {};
 const spiele = {};
 
 const getUniqueID = () => {
-  const s4 = () => Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
+  const s4 = () =>
+    Math.floor((1 + Math.random()) * 0x10000)
+      .toString(16)
+      .substring(1);
   return s4() + s4() + '-' + s4();
 };
 
-websocket.on('request', request => {
+websocket.on('request', (request) => {
   const connection = request.accept(null, request.origin);
   connection.on('close', () => {
     console.log(`Websocket Connection from ID ${clientId} Closed!`);
     // dieser client wird aus der clients-Liste entfernt
     delete clients[clientId];
   });
-  connection.on('message', message => {
+  connection.on('message', (message) => {
     const result = JSON.parse(message.utf8Data);
     console.log(`Nachricht bekommen ${result.method}`);
 
@@ -60,21 +62,83 @@ websocket.on('request', request => {
       //     (index - 1) % 4 === 2 ? 'javascript' :
       //       (index - 1) % 4 === 3 ? 'aktion' :
       //         'startfeld');
-      const spielfeldArray = ['startfeld', 'html', 'css', 'javascript', 'html', 'css', 'aktion', 'aktion', 'aktion', 'aktion', 'aktion', 'aktion', 'javascript', 'html', 'css', 'javascript', 'aktion', 'html', 'css', 'javascript', 'aktion', 'html', 'css', 'javascript', 'aktion', 'html', 'css', 'javascript', 'aktion', 'html', 'css', 'javascript', 'aktion', 'html', 'css', 'javascript', 'aktion', 'html', 'css', 'javascript', 'aktion', 'html', 'css', 'javascript', 'aktion', 'html', 'css', 'javascript', 'aktion', 'html', 'css', 'javascript', 'aktion', 'html', 'css', 'javascript', 'css', 'html', 'css', 'javascript', 'html'];
+      const spielfeldArray = [
+        'startfeld',
+        'html',
+        'css',
+        'javascript',
+        'html',
+        'css',
+        'aktion',
+        'aktion',
+        'aktion',
+        'aktion',
+        'aktion',
+        'aktion',
+        'javascript',
+        'html',
+        'css',
+        'javascript',
+        'aktion',
+        'html',
+        'css',
+        'javascript',
+        'aktion',
+        'html',
+        'css',
+        'javascript',
+        'aktion',
+        'html',
+        'css',
+        'javascript',
+        'aktion',
+        'html',
+        'css',
+        'javascript',
+        'aktion',
+        'html',
+        'css',
+        'javascript',
+        'aktion',
+        'html',
+        'css',
+        'javascript',
+        'aktion',
+        'html',
+        'css',
+        'javascript',
+        'aktion',
+        'html',
+        'css',
+        'javascript',
+        'aktion',
+        'html',
+        'css',
+        'javascript',
+        'aktion',
+        'html',
+        'css',
+        'javascript',
+        'css',
+        'html',
+        'css',
+        'javascript',
+        'html',
+      ];
       spiele[spielId] = {
         id: spielId,
         clients: [],
         spielfeldArray,
         fragen: [],
         aktionen: [],
-        werIstDran: 0
+        werIstDran: 0,
       };
       const mitteilung = `Ein Spiel mit der ID ${spielId} erfolgreich hergestellt. Du kannst jetzt dem Spiel beitreten und die ID an deine Mitspieler weitergeben.`;
 
       const payload = {
         method: 'create',
         spiel: spiele[spielId],
-        mitteilung
+        mitteilung,
       };
 
       const con = clients[clientId].connection;
@@ -89,11 +153,12 @@ websocket.on('request', request => {
 
       // Wenn keine spielId angegeben wurde
       if (!spielId) {
-        const mitteilung = 'Keine Spiel-ID vorhanden. Bitte gib eine an, bevor du dem Spiel beitrittst.';
+        const mitteilung =
+          'Keine Spiel-ID vorhanden. Bitte gib eine an, bevor du dem Spiel beitrittst.';
 
         const payload = {
           method: 'startseiteWarnung',
-          mitteilung
+          mitteilung,
         };
 
         clients[clientId].connection.send(JSON.stringify(payload));
@@ -106,7 +171,7 @@ websocket.on('request', request => {
 
           const payload = {
             method: 'startseiteWarnung',
-            mitteilung
+            mitteilung,
           };
 
           clients[clientId].connection.send(JSON.stringify(payload));
@@ -117,24 +182,28 @@ websocket.on('request', request => {
 
           const payload = {
             method: 'startseiteWarnung',
-            mitteilung
+            mitteilung,
           };
 
           clients[clientId].connection.send(JSON.stringify(payload));
 
           // falls sich ein Spieler mehrmals (mit derselben clientId) einem Spiel beitreten möchte
-        } else if (spiel.clients.find(client => client.clientId === clientId)) {
+        } else if (
+          spiel.clients.find((client) => client.clientId === clientId)
+        ) {
           const mitteilung = `Du bist bereits dem Spiel mit der ID ${spielId} beigetreten, du kannst dem nicht noch einmal beitreten.`;
 
           const payload = {
             method: 'startseiteWarnung',
-            mitteilung
+            mitteilung,
           };
 
           clients[clientId].connection.send(JSON.stringify(payload));
         } else {
           const order = spiel.clients.length;
-          const mitteilung = `${spielerName ? spielerName : 'Ein neuer Spieler'} ist erfolgreich dem Spiel mit der ID ${spielId} beigetreten.`;
+          const mitteilung = `${
+            spielerName ? spielerName : 'Ein neuer Spieler'
+          } ist erfolgreich dem Spiel mit der ID ${spielId} beigetreten.`;
           spiel.clients.push({
             clientId,
             order,
@@ -144,11 +213,11 @@ websocket.on('request', request => {
           const payload = {
             method: 'join',
             spiel,
-            mitteilung
+            mitteilung,
           };
 
           // loope durch alle Spieler und sage ihnen, dass jemand dem Spiel beigetreten ist
-          spiel.clients.forEach(client => {
+          spiel.clients.forEach((client) => {
             clients[client.clientId].connection.send(JSON.stringify(payload));
           });
         }
@@ -162,11 +231,12 @@ websocket.on('request', request => {
 
       // Wenn kein spielId vorhanden
       if (!spielId) {
-        const mitteilung = 'Du bist keinem Spiel beigetreten. Bitte trete einem Spiel bei bevor du ein Spiel startest.';
+        const mitteilung =
+          'Du bist keinem Spiel beigetreten. Bitte trete einem Spiel bei bevor du ein Spiel startest.';
 
         const payload = {
           method: 'startseiteWarnung',
-          mitteilung
+          mitteilung,
         };
 
         clients[clientId].connection.send(JSON.stringify(payload));
@@ -174,40 +244,45 @@ websocket.on('request', request => {
         const spiel = spiele[spielId];
 
         // Wenn zwar spielId vorhanden, der Client dem Spiel aber (noch) nicht beigetreten ist
-        if (!spiel.clients.find(client => client.clientId === clientId)) {
+        if (!spiel.clients.find((client) => client.clientId === clientId)) {
           const mitteilung = `Du bist dem Spiel mit der ID ${spielId} nicht beigetreten. Bitte trete dem zuerst bei, bevor du das Spiel startest.`;
 
           const payload = {
             method: 'startseiteWarnung',
-            mitteilung
+            mitteilung,
           };
 
           clients[clientId].connection.send(JSON.stringify(payload));
         } else {
           const initialPositionen = {};
-          spiel.clients.forEach(client => initialPositionen[client.order] = 0);
+          spiel.clients.forEach(
+            (client) => (initialPositionen[client.order] = 0)
+          );
 
           // Fragen und Aktionen werden beim Start eines Spiels aus DB geholt und im spiel-Objekt gespeichert,
           // aber nicht an clients geschickt
-          Frage.find().lean()
-            .then(result => {
+          Frage.find()
+            .lean()
+            .then((result) => {
               spiel.fragen = result;
               return Aktion.find().lean();
             })
-            .then(result => {
+            .then((result) => {
               spiel.aktionen = result;
 
               const payload = {
                 method: 'start',
                 spielfeldArray: spiel.spielfeldArray,
-                initialPositionen
+                initialPositionen,
               };
 
-              spiel.clients.forEach(client => {
-                clients[client.clientId].connection.send(JSON.stringify(payload));
+              spiel.clients.forEach((client) => {
+                clients[client.clientId].connection.send(
+                  JSON.stringify(payload)
+                );
               });
             })
-            .catch(err => console.log(err));
+            .catch((err) => console.log(err));
         }
       }
     }
@@ -217,14 +292,14 @@ websocket.on('request', request => {
       const clientId = result.clientId;
       const spielId = result.spielId;
       const spiel = spiele[spielId];
-      const gewuerfelteZahl = Math.floor((Math.random() * 6) + 1);
+      const gewuerfelteZahl = Math.floor(Math.random() * 6 + 1);
 
       const payload = {
         method: 'wuerfeln',
-        gewuerfelteZahl
+        gewuerfelteZahl,
       };
 
-      spiel.clients.forEach(client => {
+      spiel.clients.forEach((client) => {
         clients[client.clientId].connection.send(JSON.stringify(payload));
       });
     }
@@ -241,10 +316,10 @@ websocket.on('request', request => {
 
       const payload = {
         method: 'klickeAntwort',
-        antwortFeedback
+        antwortFeedback,
       };
 
-      spiel.clients.forEach(client => {
+      spiel.clients.forEach((client) => {
         clients[client.clientId].connection.send(JSON.stringify(payload));
       });
     }
@@ -265,8 +340,8 @@ websocket.on('request', request => {
           method: 'macheZug',
           neuePosition,
           werIstDran,
-          ende: true
-        }
+          ende: true,
+        };
       } else {
         // Thema anhand der Spielfigurposition ermitteln
         const thema = spielfeldArray[neuePosition];
@@ -278,25 +353,30 @@ websocket.on('request', request => {
             method: 'macheZug',
             neuePosition,
             werIstDran,
-            aktion
+            aktion,
           };
         } else {
           const fragen = spiel.fragen;
-          const fragenEinesThemas = fragen.filter(element => element.thema === thema);
-          const frage = fragenEinesThemas[Math.floor(Math.random() * fragenEinesThemas.length)];
+          const fragenEinesThemas = fragen.filter(
+            (element) => element.thema === thema
+          );
+          const frage =
+            fragenEinesThemas[
+              Math.floor(Math.random() * fragenEinesThemas.length)
+            ];
           payload = {
             method: 'macheZug',
             neuePosition,
             werIstDran,
-            frage
+            frage,
           };
         }
       }
 
-      spiel.clients.forEach(client => {
+      spiel.clients.forEach((client) => {
         clients[client.clientId].connection.send(JSON.stringify(payload));
       });
-    };
+    }
 
     // Ein Nutzer möchte die Spielfigur verschieben
     if (result.method === 'verschieben') {
@@ -309,10 +389,10 @@ websocket.on('request', request => {
       const payload = {
         method: 'verschieben',
         neuePosition,
-        werIstDran
+        werIstDran,
       };
 
-      spiel.clients.forEach(client => {
+      spiel.clients.forEach((client) => {
         clients[client.clientId].connection.send(JSON.stringify(payload));
       });
     }
@@ -322,14 +402,15 @@ websocket.on('request', request => {
       const clientId = result.clientId;
       const spielId = result.spielId;
       const spiel = spiele[spielId];
-      spiel.werIstDran = spiel.werIstDran + 1 < spiel.clients.length ? spiel.werIstDran + 1 : 0;
+      spiel.werIstDran =
+        spiel.werIstDran + 1 < spiel.clients.length ? spiel.werIstDran + 1 : 0;
 
       const payload = {
         method: 'naechsterZug',
-        werIstDran: spiel.werIstDran
+        werIstDran: spiel.werIstDran,
       };
 
-      spiel.clients.forEach(client => {
+      spiel.clients.forEach((client) => {
         clients[client.clientId].connection.send(JSON.stringify(payload));
       });
     }
@@ -343,10 +424,10 @@ websocket.on('request', request => {
       delete spiele[spielId];
 
       const payload = {
-        method: 'beenden'
+        method: 'beenden',
       };
 
-      spiel.clients.forEach(client => {
+      spiel.clients.forEach((client) => {
         clients[client.clientId].connection.send(JSON.stringify(payload));
       });
     }
@@ -357,7 +438,7 @@ websocket.on('request', request => {
   const clientId = getUniqueID();
 
   clients[clientId] = {
-    connection
+    connection,
   };
 
   console.log(Object.keys(clients));
@@ -368,7 +449,7 @@ websocket.on('request', request => {
   const payload = {
     method: 'connect',
     clientId,
-    mitteilung
+    mitteilung,
   };
 
   connection.send(JSON.stringify(payload));
