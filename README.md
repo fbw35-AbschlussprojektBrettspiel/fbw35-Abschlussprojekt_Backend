@@ -1,4 +1,5 @@
 # WebDev - Das ~~Brett~~ Onlinespiel
+
 ![logo](./public/img/LogoSpiel.png)
 
 Eine ausführliche Beschreibung des Projekts findest du in unserem [Frontend-Repository](https://github.com/fbw35-AbschlussprojektBrettspiel/fbw35-Abschlussprojekt_Frontend).
@@ -7,7 +8,7 @@ Wie weit reichen deine WebDev-Kenntnisse? Hier ist eine tolle Möglichkeit, es h
 
 ![screen](./public/img/screenshot.jpg)
 
-[Beispiel-Deployment auf Heroku](https://webdev-brettspiel-frontend.herokuapp.com/)
+[Beispiel-Deployment auf Render](https://webdev-onlinebrettspiel-frontend.onrender.com/)
 
 ## Installation
 
