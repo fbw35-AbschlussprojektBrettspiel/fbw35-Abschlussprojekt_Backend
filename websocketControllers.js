@@ -4,7 +4,16 @@ const { standardLayout, demoLayout } = require('./spielfeldLayouts.js');
 const Frage = require('./models/frage-model');
 const Aktion = require('./models/aktion-model');
 
-const create = ({ clientId }, spielId) => {
+const getUniqueID = () => {
+  const s4 = () =>
+    Math.floor((1 + Math.random()) * 0x10000)
+      .toString(16)
+      .substring(1);
+  return s4() + s4() + '-' + s4();
+};
+
+const create = ({ clientId }) => {
+  const spielId = getUniqueID();
   // standardLayout für gleichmäßige Verteilung, demoLayout um Aktionen sicher zeigen zu können
   const spielfeldArray = demoLayout;
   spiele[spielId] = {
@@ -275,6 +284,30 @@ const beenden = ({ spielId }) => {
   });
 };
 
+const connect = (connection) => {
+  // generiert eine neue clientId
+  const clientId = getUniqueID();
+
+  clients[clientId] = {
+    connection,
+  };
+
+  console.log(Object.keys(clients));
+
+  const mitteilung = 'Verbindung zum Spielserver erfolgreich hergestellt.';
+
+  //send back the client connect
+  const payload = {
+    method: 'connect',
+    clientId,
+    mitteilung,
+  };
+
+  connection.send(JSON.stringify(payload));
+
+  return clientId;
+};
+
 module.exports = {
   create,
   join,
@@ -285,4 +318,5 @@ module.exports = {
   verschieben,
   naechsterZug,
   beenden,
+  connect,
 };

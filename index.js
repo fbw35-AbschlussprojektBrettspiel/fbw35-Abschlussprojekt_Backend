@@ -14,6 +14,7 @@ const {
   verschieben,
   naechsterZug,
   beenden,
+  connect,
 } = require('./websocketControllers.js');
 
 const { clients, spiele } = require('./store.js');
@@ -39,16 +40,10 @@ const websocket = new WebSocketServer({
   httpServer: server,
 });
 
-const getUniqueID = () => {
-  const s4 = () =>
-    Math.floor((1 + Math.random()) * 0x10000)
-      .toString(16)
-      .substring(1);
-  return s4() + s4() + '-' + s4();
-};
-
 websocket.on('request', (request) => {
   const connection = request.accept(null, request.origin);
+  // request; ein Nutzer stellt die Verbindung zum Websocket-Server her
+  const clientId = connect(connection);
   connection.on('close', () => {
     console.log(`Websocket Connection from ID ${clientId} Closed!`);
     // dieser client wird aus der clients-Liste entfernt
@@ -60,7 +55,7 @@ websocket.on('request', (request) => {
 
     // Ein Nutzer möchte ein neues Spiel erstellen
     if (result.method === 'create') {
-      create(result, getUniqueID());
+      create(result);
     }
 
     // Ein Nutzer möchte ein Spiel beitreten
@@ -103,25 +98,4 @@ websocket.on('request', (request) => {
       beenden(result);
     }
   });
-
-  // request; ein Nutzer stellt die Verbindung zum Websocket-Server her
-  // generiert eine neue clientId
-  const clientId = getUniqueID();
-
-  clients[clientId] = {
-    connection,
-  };
-
-  console.log(Object.keys(clients));
-
-  const mitteilung = 'Verbindung zum Spielserver erfolgreich hergestellt.';
-
-  //send back the client connect
-  const payload = {
-    method: 'connect',
-    clientId,
-    mitteilung,
-  };
-
-  connection.send(JSON.stringify(payload));
 });
