@@ -9,6 +9,7 @@ const Frage = require('./models/frage-model');
 const Aktion = require('./models/aktion-model');
 
 const { standardLayout, demoLayout } = require('./spielfeldLayouts.js');
+const { clients, spiele } = require('./store.js');
 
 const URI = process.env.DB || 'mongodb://localhost:27017/quizfragen';
 const port = process.env.PORT || 3050;
@@ -30,10 +31,6 @@ server.listen(port, () =>
 const websocket = new WebSocketServer({
   httpServer: server,
 });
-
-// Container für Informationen von clients und spielen
-const clients = {};
-const spiele = {};
 
 const getUniqueID = () => {
   const s4 = () =>
