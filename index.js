@@ -8,6 +8,8 @@ const WebSocketServer = require('websocket').server;
 const Frage = require('./models/frage-model');
 const Aktion = require('./models/aktion-model');
 
+const { standardLayout, demoLayout } = require('./spielfeldLayouts.js');
+
 const URI = process.env.DB || 'mongodb://localhost:27017/quizfragen';
 const port = process.env.PORT || 3050;
 
@@ -56,75 +58,8 @@ websocket.on('request', (request) => {
     if (result.method === 'create') {
       const clientId = result.clientId;
       const spielId = getUniqueID();
-      // Spielfeld-Array. Die Elemente repräsentieren die Feldtypen
-      // const spielfeldArray = Array(61).fill(null).map((element, index) => (index - 1) % 4 === 0 ? 'html' :
-      //   (index - 1) % 4 === 1 ? 'css' :
-      //     (index - 1) % 4 === 2 ? 'javascript' :
-      //       (index - 1) % 4 === 3 ? 'aktion' :
-      //         'startfeld');
-      const spielfeldArray = [
-        'startfeld',
-        'html',
-        'css',
-        'javascript',
-        'html',
-        'css',
-        'aktion',
-        'aktion',
-        'aktion',
-        'aktion',
-        'aktion',
-        'aktion',
-        'javascript',
-        'html',
-        'css',
-        'javascript',
-        'aktion',
-        'html',
-        'css',
-        'javascript',
-        'aktion',
-        'html',
-        'css',
-        'javascript',
-        'aktion',
-        'html',
-        'css',
-        'javascript',
-        'aktion',
-        'html',
-        'css',
-        'javascript',
-        'aktion',
-        'html',
-        'css',
-        'javascript',
-        'aktion',
-        'html',
-        'css',
-        'javascript',
-        'aktion',
-        'html',
-        'css',
-        'javascript',
-        'aktion',
-        'html',
-        'css',
-        'javascript',
-        'aktion',
-        'html',
-        'css',
-        'javascript',
-        'aktion',
-        'html',
-        'css',
-        'javascript',
-        'css',
-        'html',
-        'css',
-        'javascript',
-        'html',
-      ];
+      // standardLayout für gleichmäßige Verteilung, demoLayout um Aktionen sicher zeigen zu können
+      const spielfeldArray = demoLayout;
       spiele[spielId] = {
         id: spielId,
         clients: [],
